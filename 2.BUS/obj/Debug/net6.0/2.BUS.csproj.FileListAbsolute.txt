@@ -1,0 +1,15 @@
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\bin\Debug\net6.0\2.BUS.deps.json
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\bin\Debug\net6.0\2.BUS.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\bin\Debug\net6.0\2.BUS.pdb
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\bin\Debug\net6.0\1.DAL.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\bin\Debug\net6.0\1.DAL.pdb
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.csproj.AssemblyReference.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.GeneratedMSBuildEditorConfig.editorconfig
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.AssemblyInfoInputs.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.AssemblyInfo.cs
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.csproj.CoreCompileInputs.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.csproj.CopyComplete
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\refint\2.BUS.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\2.BUS.pdb
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\2.BUS\obj\Debug\net6.0\ref\2.BUS.dll

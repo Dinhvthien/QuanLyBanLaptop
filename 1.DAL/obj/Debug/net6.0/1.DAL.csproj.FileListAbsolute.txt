@@ -1,0 +1,14 @@
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\bin\Debug\net6.0\1.DAL.deps.json
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\bin\Debug\net6.0\1.DAL.runtimeconfig.json
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\bin\Debug\net6.0\1.DAL.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\bin\Debug\net6.0\1.DAL.pdb
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.csproj.AssemblyReference.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.GeneratedMSBuildEditorConfig.editorconfig
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.AssemblyInfoInputs.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.AssemblyInfo.cs
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.csproj.CoreCompileInputs.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\refint\1.DAL.dll
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.pdb
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\1.DAL.genruntimeconfig.cache
+G:\My Drive\Study\Dự án 1 .net\DA1_QLBanLaptop\1.DAL\obj\Debug\net6.0\ref\1.DAL.dll
