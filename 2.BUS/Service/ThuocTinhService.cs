@@ -9,7 +9,7 @@ namespace _2.BUS.Service
     public class ThuocTinhService : IThuocTinhService
     {
         IThuocTinhRepositories thuocTinhRepositories = new ThuocTinhRepositories();
-        ILaptopService laptopService = new LaptopService();
+        ILaptopRepositories laptopRepositories = new LaptopRepositories();
         public string AddTt(ThuocTinhView ttv)
         {
             if (ttv == null) return "Thất bại";
@@ -44,13 +44,12 @@ namespace _2.BUS.Service
             List<ThuocTinhView> listthuoctinh = new List<ThuocTinhView>();
             listthuoctinh = (
                     from a in thuocTinhRepositories.GetThuocTinh()
-                    join b in laptopService.GetLaptop() on a.IDLaptop equals b.ID
+                    join b in laptopRepositories.GetLaptop() on a.IDLaptop equals b.ID
                     select new ThuocTinhView
                     {
                         ID = a.ID,
                         Ten = a.Ten,
                         Ma = a.Ma,
-                        IDLaptop = a.IDLaptop,
                         MaLaptop = b.Ma
                     }
                        ).ToList();

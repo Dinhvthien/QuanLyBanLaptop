@@ -9,15 +9,18 @@ namespace _3.PL.Views
         Guid GetIdCuaHang { get; set; }
         Guid GetIdChucVu { get; set; }
         Guid GetIdNhanVien { get; set; }
+        Guid GetIdVoucher { get; set; }
         ICuaHangService cuaHangService;
         IChucVuService chucVuService;
         INhanVienService nhanVienService;
+        IVoucherService voucherService;
         public AdminForm()
         {
             InitializeComponent();
             cuaHangService = new CuaHangService();
             chucVuService = new ChucVuService();
             nhanVienService = new NhanVienService();
+            voucherService = new VoucherService();
 
         }
         void LoadCombobox()
@@ -72,7 +75,7 @@ namespace _3.PL.Views
         }
         void LoadNhanVien(List<NhanVienView> listnhanvien)
         {
-            int stt = 0;
+            int sttnv = 0;
             dtg_shownhanvien.Rows.Clear();
             dtg_shownhanvien.ColumnCount = 10;
             dtg_shownhanvien.Columns[0].Name = "ID";
@@ -89,8 +92,28 @@ namespace _3.PL.Views
             dtg_shownhanvien.Columns[9].Name = "Mã chức vụ";
             foreach (var s in listnhanvien)
             {
-                stt++;
-                dtg_shownhanvien.Rows.Add(s.ID, stt, s.Ma, s.HoTen, s.DiaChi, s.SDT, s.MatKhau, s.TrangThai, s.MaCuaHang, s.MaChucVu);
+                sttnv++;
+                dtg_shownhanvien.Rows.Add(s.ID, sttnv, s.Ma, s.HoTen, s.DiaChi, s.SDT, s.MatKhau, s.TrangThai, s.MaCuaHang, s.MaChucVu);
+            }
+        }
+        void LoadDataVoucher(List<VoucherView> listvc)
+        {
+            int sttvc = 0;
+            dtg_showvoucher.Rows.Clear();
+            dtg_showvoucher.ColumnCount = 8;
+            dtg_showvoucher.Columns[0].Name = "ID";
+            dtg_showvoucher.Columns[0].Visible = false;
+            dtg_showvoucher.Columns[1].Name = "STT";
+            dtg_showvoucher.Columns[2].Name = "Mã";
+            dtg_showvoucher.Columns[3].Name = "Tên";
+            dtg_showvoucher.Columns[4].Name = "Ngày bắt đầu";
+            dtg_showvoucher.Columns[5].Name = "Ngày kết thúc";
+            dtg_showvoucher.Columns[6].Name = "Giá trị";
+            dtg_showvoucher.Columns[7].Name = "Số lượng";
+            foreach (var k in listvc)
+            {
+                sttvc++;
+                dtg_showvoucher.Rows.Add(k.ID, sttvc, k.Ma, k.Ten, k.StartDay, k.EndDay, k.GiaTri, k.SoLuong);
             }
         }
         private void AdminForm_Load(object sender, EventArgs e)
@@ -98,6 +121,7 @@ namespace _3.PL.Views
             LoadCuaHang(cuaHangService.GetCuaHang());
             LoadChucVu(chucVuService.GetChucVu());
             LoadNhanVien(nhanVienService.GetAllNhanVien());
+            LoadDataVoucher(voucherService.GetVoucher());
             LoadCombobox();
         }
 
@@ -248,6 +272,65 @@ namespace _3.PL.Views
             nud_ttnhanvien.Value = Convert.ToDecimal(dtg_shownhanvien.CurrentRow.Cells[7].Value.ToString());
             cbb_idchucvu.Text = dtg_shownhanvien.CurrentRow.Cells[9].Value.ToString();
             cbb_idcuahang.Text = dtg_shownhanvien.CurrentRow.Cells[8].Value.ToString();
+        }
+
+        private void btn_themvoucher_Click(object sender, EventArgs e)
+        {
+            VoucherView v = new VoucherView();
+            v.ID = Guid.NewGuid();
+            v.Ma = tbx_mavoucher.Text;
+            v.Ten = tbx_tenvoucher.Text;
+            v.StartDay = Convert.ToDateTime(dtp_ngaybdvc.Value.ToString("yyyy/MM/dd"));
+            v.EndDay = Convert.ToDateTime(dtp_ngayktvc.Value.ToString("yyyy/MM/dd"));
+            v.GiaTri = Convert.ToDecimal(tbx_giatrivoucher.Text);
+            v.SoLuong = Convert.ToInt32(nud_soluongvoucher.Value);
+            if (voucherService.CheckMa(tbx_mavoucher.Text))
+            {
+                MessageBox.Show("Voucher đã tồn tại", "Warrning !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show(voucherService.Add(v));
+                LoadDataVoucher(voucherService.GetVoucher());
+            }
+        }
+
+        private void btn_suavoucher_Click(object sender, EventArgs e)
+        {
+            VoucherView v = new VoucherView();
+            v.ID = GetIdVoucher;
+            v.Ten = tbx_tenvoucher.Text;
+            v.StartDay = Convert.ToDateTime(dtp_ngaybdvc.Value.ToString("yyyy/MM/dd"));
+            v.EndDay = Convert.ToDateTime(dtp_ngayktvc.Value.ToString("yyyy/MM/dd"));
+            v.GiaTri = Convert.ToDecimal(tbx_giatrivoucher.Text);
+            v.SoLuong = Convert.ToInt32(nud_soluongvoucher.Value);
+            MessageBox.Show(voucherService.Update(v));
+            LoadDataVoucher(voucherService.GetVoucher());
+        }
+
+        private void btn_xoavoucher_Click(object sender, EventArgs e)
+        {
+            VoucherView v = new VoucherView();
+            v.ID = GetIdVoucher;
+            MessageBox.Show(voucherService.Delete(v));
+            LoadDataVoucher(voucherService.GetVoucher());
+        }
+
+        private void dtg_showvoucher_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetIdVoucher = Guid.Parse(dtg_showvoucher.CurrentRow.Cells[0].Value.ToString());
+            tbx_mavoucher.Text = dtg_showvoucher.CurrentRow.Cells[2].Value.ToString();
+            tbx_tenvoucher.Text = dtg_showvoucher.CurrentRow.Cells[3].Value.ToString();
+            dtp_ngaybdvc.Value = Convert.ToDateTime(dtg_showvoucher.CurrentRow.Cells[4].Value.ToString());
+            dtp_ngayktvc.Value = Convert.ToDateTime(dtg_showvoucher.CurrentRow.Cells[5].Value.ToString());
+            tbx_giatrivoucher.Text = dtg_showvoucher.CurrentRow.Cells[6].Value.ToString();
+            nud_soluongvoucher.Value = Convert.ToDecimal(dtg_showvoucher.CurrentRow.Cells[7].Value.ToString());
+        }
+
+        private void tbx_giatrivoucher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

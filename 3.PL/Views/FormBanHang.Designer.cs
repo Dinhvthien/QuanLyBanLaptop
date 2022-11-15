@@ -32,18 +32,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabp_khachhang = new System.Windows.Forms.TabPage();
+            this.dtg_showkhachhang = new System.Windows.Forms.DataGridView();
+            this.tbx_diachikhachhang = new System.Windows.Forms.TextBox();
+            this.tbx_sdtkhachhang = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_suakhachhang = new System.Windows.Forms.Button();
             this.btn_xoakhachhang = new System.Windows.Forms.Button();
-            this.tbx_mansx = new System.Windows.Forms.TextBox();
-            this.tbx_tennsx = new System.Windows.Forms.TextBox();
+            this.tbx_makhachhang = new System.Windows.Forms.TextBox();
+            this.tbx_tenkhachhang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_themkhachhang = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtg_showkhachhang = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabp_khachhang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showkhachhang)).BeginInit();
@@ -84,14 +84,14 @@
             // tabp_khachhang
             // 
             this.tabp_khachhang.Controls.Add(this.dtg_showkhachhang);
-            this.tabp_khachhang.Controls.Add(this.textBox1);
-            this.tabp_khachhang.Controls.Add(this.textBox2);
+            this.tabp_khachhang.Controls.Add(this.tbx_diachikhachhang);
+            this.tabp_khachhang.Controls.Add(this.tbx_sdtkhachhang);
             this.tabp_khachhang.Controls.Add(this.label2);
             this.tabp_khachhang.Controls.Add(this.label3);
             this.tabp_khachhang.Controls.Add(this.btn_suakhachhang);
             this.tabp_khachhang.Controls.Add(this.btn_xoakhachhang);
-            this.tabp_khachhang.Controls.Add(this.tbx_mansx);
-            this.tabp_khachhang.Controls.Add(this.tbx_tennsx);
+            this.tabp_khachhang.Controls.Add(this.tbx_makhachhang);
+            this.tabp_khachhang.Controls.Add(this.tbx_tenkhachhang);
             this.tabp_khachhang.Controls.Add(this.label1);
             this.tabp_khachhang.Controls.Add(this.label4);
             this.tabp_khachhang.Controls.Add(this.btn_themkhachhang);
@@ -103,6 +103,48 @@
             this.tabp_khachhang.Text = "Khách Hàng";
             this.tabp_khachhang.UseVisualStyleBackColor = true;
             // 
+            // dtg_showkhachhang
+            // 
+            this.dtg_showkhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_showkhachhang.Location = new System.Drawing.Point(357, 55);
+            this.dtg_showkhachhang.Name = "dtg_showkhachhang";
+            this.dtg_showkhachhang.RowTemplate.Height = 25;
+            this.dtg_showkhachhang.Size = new System.Drawing.Size(446, 264);
+            this.dtg_showkhachhang.TabIndex = 18;
+            this.dtg_showkhachhang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showkhachhang_CellClick);
+            // 
+            // tbx_diachikhachhang
+            // 
+            this.tbx_diachikhachhang.Location = new System.Drawing.Point(80, 127);
+            this.tbx_diachikhachhang.Name = "tbx_diachikhachhang";
+            this.tbx_diachikhachhang.Size = new System.Drawing.Size(100, 23);
+            this.tbx_diachikhachhang.TabIndex = 17;
+            // 
+            // tbx_sdtkhachhang
+            // 
+            this.tbx_sdtkhachhang.Location = new System.Drawing.Point(80, 169);
+            this.tbx_sdtkhachhang.Name = "tbx_sdtkhachhang";
+            this.tbx_sdtkhachhang.Size = new System.Drawing.Size(100, 23);
+            this.tbx_sdtkhachhang.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "SĐT";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Địa Chỉ";
+            // 
             // btn_suakhachhang
             // 
             this.btn_suakhachhang.ForeColor = System.Drawing.Color.Red;
@@ -112,6 +154,7 @@
             this.btn_suakhachhang.TabIndex = 13;
             this.btn_suakhachhang.Text = "Sửa";
             this.btn_suakhachhang.UseVisualStyleBackColor = true;
+            this.btn_suakhachhang.Click += new System.EventHandler(this.btn_suakhachhang_Click);
             // 
             // btn_xoakhachhang
             // 
@@ -122,20 +165,21 @@
             this.btn_xoakhachhang.TabIndex = 12;
             this.btn_xoakhachhang.Text = "Xóa";
             this.btn_xoakhachhang.UseVisualStyleBackColor = true;
+            this.btn_xoakhachhang.Click += new System.EventHandler(this.btn_xoakhachhang_Click);
             // 
-            // tbx_mansx
+            // tbx_makhachhang
             // 
-            this.tbx_mansx.Location = new System.Drawing.Point(79, 42);
-            this.tbx_mansx.Name = "tbx_mansx";
-            this.tbx_mansx.Size = new System.Drawing.Size(100, 23);
-            this.tbx_mansx.TabIndex = 11;
+            this.tbx_makhachhang.Location = new System.Drawing.Point(79, 42);
+            this.tbx_makhachhang.Name = "tbx_makhachhang";
+            this.tbx_makhachhang.Size = new System.Drawing.Size(100, 23);
+            this.tbx_makhachhang.TabIndex = 11;
             // 
-            // tbx_tennsx
+            // tbx_tenkhachhang
             // 
-            this.tbx_tennsx.Location = new System.Drawing.Point(79, 84);
-            this.tbx_tennsx.Name = "tbx_tennsx";
-            this.tbx_tennsx.Size = new System.Drawing.Size(100, 23);
-            this.tbx_tennsx.TabIndex = 10;
+            this.tbx_tenkhachhang.Location = new System.Drawing.Point(79, 84);
+            this.tbx_tenkhachhang.Name = "tbx_tenkhachhang";
+            this.tbx_tenkhachhang.Size = new System.Drawing.Size(100, 23);
+            this.tbx_tenkhachhang.TabIndex = 10;
             // 
             // label1
             // 
@@ -164,47 +208,7 @@
             this.btn_themkhachhang.TabIndex = 7;
             this.btn_themkhachhang.Text = "Thêm";
             this.btn_themkhachhang.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(80, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(80, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "SĐT";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Địa Chỉ";
-            // 
-            // dtg_showkhachhang
-            // 
-            this.dtg_showkhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showkhachhang.Location = new System.Drawing.Point(357, 55);
-            this.dtg_showkhachhang.Name = "dtg_showkhachhang";
-            this.dtg_showkhachhang.RowTemplate.Height = 25;
-            this.dtg_showkhachhang.Size = new System.Drawing.Size(446, 264);
-            this.dtg_showkhachhang.TabIndex = 18;
+            this.btn_themkhachhang.Click += new System.EventHandler(this.btn_themkhachhang_Click);
             // 
             // FormBanHang
             // 
@@ -216,6 +220,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBanHang";
             this.Text = "FormBanHang";
+            this.Load += new System.EventHandler(this.FormBanHang_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabp_khachhang.ResumeLayout(false);
             this.tabp_khachhang.PerformLayout();
@@ -232,13 +237,13 @@
         private TabPage tabp_khachhang;
         private Button btn_suakhachhang;
         private Button btn_xoakhachhang;
-        private TextBox tbx_mansx;
-        private TextBox tbx_tennsx;
+        private TextBox tbx_makhachhang;
+        private TextBox tbx_tenkhachhang;
         private Label label1;
         private Label label4;
         private Button btn_themkhachhang;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbx_diachikhachhang;
+        private TextBox tbx_sdtkhachhang;
         private Label label2;
         private Label label3;
         private DataGridView dtg_showkhachhang;

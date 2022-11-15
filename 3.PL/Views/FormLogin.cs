@@ -23,9 +23,10 @@ namespace _3.PL.Views
                 tbx_password.Text = "";
                 tbx_username.Text = "";
             }
+
             else
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu sai","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản hoặc mật khẩu sai", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

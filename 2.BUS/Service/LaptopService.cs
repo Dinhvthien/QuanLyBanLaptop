@@ -9,6 +9,8 @@ namespace _2.BUS.Service
     public class LaptopService : ILaptopService
     {
         ILaptopRepositories laptopRepositories = new LaptopRepositories();
+        IThuocTinhRepositories thuocTinhRepositories = new ThuocTinhRepositories();
+        IGiaTriRepositories giaTriRepositories = new GiaTriRepositories();
         public string AddLaptop(LaptopView ltv)
         {
             if (ltv == null) return "Thất bại";
@@ -42,11 +44,15 @@ namespace _2.BUS.Service
             List<LaptopView> listlt = new List<LaptopView>();
             listlt = (
                 from a in laptopRepositories.GetLaptop()
+                join e in thuocTinhRepositories.GetThuocTinh() on a.ID equals e.IDLaptop
+                join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
                 select new LaptopView
                 {
                     ID = a.ID,
                     Ma = a.Ma,
-                    Ten = a.Ten
+                    Ten = a.Ten,
+                    TenThuocTinh = e.Ten,
+                    ThongSoGiaTri = f.ThongSo
                 }
                 ).ToList();
             return listlt;

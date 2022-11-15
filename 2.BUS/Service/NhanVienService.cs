@@ -42,6 +42,13 @@ namespace _2.BUS.Service
             else return false;
         }
 
+        public bool CheckQuanLy(string taikhoan, string matkhau, string cv)
+        {
+            var s = GetAllNhanVien().FirstOrDefault(a => a.SDT == taikhoan && a.MatKhau == matkhau && a.MaChucVu == cv);
+            if (s != null) return true;
+            else return false;
+        }
+
         public bool CheckSdtMkNhanVien(string taikhoan, string matkhau)
         {
             var listnv = nhanVienRepositories.GetNhanVien();// lấy dữ liệu trong database ra rồi tìm  check dc hoa thường

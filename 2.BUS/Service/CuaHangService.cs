@@ -26,8 +26,8 @@ namespace _2.BUS.Service
         public bool CheckMa(string ma)
         {
             var thao = cuaHangRepositories.GetCuaHang().FirstOrDefault(a => a.Ma == ma);
-                if(thao!=null) return true;
-                else return false;  
+            if (thao != null) return true;
+            else return false;
         }
 
         public string Delete(CuaHangView chv)
@@ -62,7 +62,7 @@ namespace _2.BUS.Service
             CuaHang thao = new CuaHang();
             thao.ID = chv.ID;
             thao.Ten = chv.Ten;
-        //    thao.Ma = chv.Ma;
+            //    thao.Ma = chv.Ma;
             thao.DiaChi = chv.DiaChi;
             thao.Sdt = chv.Sdt;
             if (cuaHangRepositories.Update(thao)) return "Thành Công";

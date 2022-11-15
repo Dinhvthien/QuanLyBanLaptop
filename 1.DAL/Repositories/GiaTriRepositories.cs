@@ -17,7 +17,7 @@ namespace _1.DAL.Repositories
         public bool Delete(GiaTri gt)
         {
             if (gt == null) return false;
-            var x = context.GiaTris.FirstOrDefault(a=>a.ID== gt.ID);
+            var x = context.GiaTris.FirstOrDefault(a => a.ID == gt.ID);
             context.Remove(x);
             context.SaveChanges();
             return true;

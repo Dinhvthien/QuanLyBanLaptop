@@ -37,8 +37,8 @@ namespace _3.PL.Views
         private void mni_admin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm adf = new AdminForm();
-            adf.ShowDialog();
+            LoginAdminForm laf = new LoginAdminForm();
+            laf.ShowDialog();
             this.Show();
         }
 

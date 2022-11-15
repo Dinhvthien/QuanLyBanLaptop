@@ -12,6 +12,9 @@ namespace _2.BUS.Service
         ILaptopRepositories laptopRepositories = new LaptopRepositories();
         IMauSacRepositories mauSacRepositories = new MauSacRepositories();
         INsxRepositories nsxRepositories = new NsxRepositories();
+        IThuocTinhRepositories thuocTinhRepositories = new ThuocTinhRepositories();
+        IGiaTriRepositories giaTriRepositories = new GiaTriRepositories();
+        ILaptopService laptopService = new LaptopService();
         public string Add(ChiTietLaptopView ctltview)
         {
             if (ctltview == null) return "Thất bại";
@@ -41,22 +44,25 @@ namespace _2.BUS.Service
             List<ChiTietLaptopView> listview = new List<ChiTietLaptopView>();
             listview = (
                          from a in chiTietLaptopRepositories.GetChiTietLaptop()
-                         join b in laptopRepositories.GetLaptop() on a.IDLaptop equals b.ID
+                             //     join b in laptopService.GetLaptop() on a.IDLaptop equals b.ID
                          join c in mauSacRepositories.GetMauSac() on a.IDMauSac equals c.ID
                          join d in nsxRepositories.GetNsx() on a.IDNsx equals d.ID
+                         join g in laptopRepositories.GetLaptop() on a.IDLaptop equals g.ID
+                         //join e in thuocTinhRepositories.GetThuocTinh() on g.ID equals e.IDLaptop
+                         //join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
                          select new ChiTietLaptopView
                          {
                              ID = a.ID,
-                             IDMauSac = a.IDMauSac,
                              MoTa = a.MoTa,
                              SoLuong = a.SoLuong,
                              GiaNhap = a.GiaNhap,
                              Giaban = a.Giaban,
-                             IDLaptop = a.IDLaptop,
-                             IDNsx = a.IDNsx,
                              MaMauSac = c.Ma,
                              MaNsx = d.Ma,
-                             MaLaptop = b.Ma
+                             MaLaptop = g.Ma,
+                             TenLaptop = g.Ten,
+                             //    TenThuocTinh = e.Ten,
+                             //ThongSoGiaTri = f.ThongSo
 
                          }
 

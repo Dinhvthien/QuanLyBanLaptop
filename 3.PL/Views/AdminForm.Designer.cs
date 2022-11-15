@@ -74,7 +74,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabp_voucher = new System.Windows.Forms.TabPage();
-            this.nud_giatrivoucher = new System.Windows.Forms.NumericUpDown();
+            this.tbx_giatrivoucher = new System.Windows.Forms.TextBox();
             this.dtp_ngayktvc = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngaybdvc = new System.Windows.Forms.DateTimePicker();
             this.dtg_showvoucher = new System.Windows.Forms.DataGridView();
@@ -99,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_ttnhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_shownhanvien)).BeginInit();
             this.tabp_voucher.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_giatrivoucher)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showvoucher)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_soluongvoucher)).BeginInit();
             this.SuspendLayout();
@@ -560,7 +559,7 @@
             // 
             // tabp_voucher
             // 
-            this.tabp_voucher.Controls.Add(this.nud_giatrivoucher);
+            this.tabp_voucher.Controls.Add(this.tbx_giatrivoucher);
             this.tabp_voucher.Controls.Add(this.dtp_ngayktvc);
             this.tabp_voucher.Controls.Add(this.dtp_ngaybdvc);
             this.tabp_voucher.Controls.Add(this.dtg_showvoucher);
@@ -584,36 +583,38 @@
             this.tabp_voucher.Text = "Voucher";
             this.tabp_voucher.UseVisualStyleBackColor = true;
             // 
-            // nud_giatrivoucher
+            // tbx_giatrivoucher
             // 
-            this.nud_giatrivoucher.Location = new System.Drawing.Point(164, 244);
-            this.nud_giatrivoucher.Name = "nud_giatrivoucher";
-            this.nud_giatrivoucher.Size = new System.Drawing.Size(85, 29);
-            this.nud_giatrivoucher.TabIndex = 65;
+            this.tbx_giatrivoucher.Location = new System.Drawing.Point(124, 230);
+            this.tbx_giatrivoucher.Name = "tbx_giatrivoucher";
+            this.tbx_giatrivoucher.Size = new System.Drawing.Size(169, 29);
+            this.tbx_giatrivoucher.TabIndex = 65;
+            this.tbx_giatrivoucher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_giatrivoucher_KeyPress);
             // 
             // dtp_ngayktvc
             // 
-            this.dtp_ngayktvc.Location = new System.Drawing.Point(188, 201);
+            this.dtp_ngayktvc.Location = new System.Drawing.Point(145, 189);
             this.dtp_ngayktvc.Name = "dtp_ngayktvc";
-            this.dtp_ngayktvc.Size = new System.Drawing.Size(200, 29);
+            this.dtp_ngayktvc.Size = new System.Drawing.Size(250, 29);
             this.dtp_ngayktvc.TabIndex = 64;
             // 
             // dtp_ngaybdvc
             // 
-            this.dtp_ngaybdvc.Location = new System.Drawing.Point(188, 171);
+            this.dtp_ngaybdvc.Location = new System.Drawing.Point(145, 159);
             this.dtp_ngaybdvc.Name = "dtp_ngaybdvc";
-            this.dtp_ngaybdvc.Size = new System.Drawing.Size(200, 29);
+            this.dtp_ngaybdvc.Size = new System.Drawing.Size(250, 29);
             this.dtp_ngaybdvc.TabIndex = 63;
             // 
             // dtg_showvoucher
             // 
             this.dtg_showvoucher.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showvoucher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showvoucher.Location = new System.Drawing.Point(394, 46);
+            this.dtg_showvoucher.Location = new System.Drawing.Point(401, 34);
             this.dtg_showvoucher.Name = "dtg_showvoucher";
             this.dtg_showvoucher.RowTemplate.Height = 25;
-            this.dtg_showvoucher.Size = new System.Drawing.Size(656, 279);
+            this.dtg_showvoucher.Size = new System.Drawing.Size(649, 279);
             this.dtg_showvoucher.TabIndex = 62;
+            this.dtg_showvoucher.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showvoucher_CellClick);
             // 
             // btn_suavoucher
             // 
@@ -624,6 +625,7 @@
             this.btn_suavoucher.TabIndex = 61;
             this.btn_suavoucher.Text = "Sửa";
             this.btn_suavoucher.UseVisualStyleBackColor = true;
+            this.btn_suavoucher.Click += new System.EventHandler(this.btn_suavoucher_Click);
             // 
             // btn_xoavoucher
             // 
@@ -634,6 +636,7 @@
             this.btn_xoavoucher.TabIndex = 60;
             this.btn_xoavoucher.Text = "Xóa";
             this.btn_xoavoucher.UseVisualStyleBackColor = true;
+            this.btn_xoavoucher.Click += new System.EventHandler(this.btn_xoavoucher_Click);
             // 
             // btn_themvoucher
             // 
@@ -644,10 +647,11 @@
             this.btn_themvoucher.TabIndex = 59;
             this.btn_themvoucher.Text = "Thêm";
             this.btn_themvoucher.UseVisualStyleBackColor = true;
+            this.btn_themvoucher.Click += new System.EventHandler(this.btn_themvoucher_Click);
             // 
             // nud_soluongvoucher
             // 
-            this.nud_soluongvoucher.Location = new System.Drawing.Point(164, 273);
+            this.nud_soluongvoucher.Location = new System.Drawing.Point(121, 261);
             this.nud_soluongvoucher.Name = "nud_soluongvoucher";
             this.nud_soluongvoucher.Size = new System.Drawing.Size(85, 29);
             this.nud_soluongvoucher.TabIndex = 58;
@@ -655,7 +659,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(79, 207);
+            this.label15.Location = new System.Drawing.Point(36, 195);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(109, 21);
             this.label15.TabIndex = 55;
@@ -664,7 +668,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(82, 171);
+            this.label16.Location = new System.Drawing.Point(39, 159);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 21);
             this.label16.TabIndex = 54;
@@ -673,7 +677,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(82, 275);
+            this.label17.Location = new System.Drawing.Point(39, 263);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(73, 21);
             this.label17.TabIndex = 52;
@@ -682,7 +686,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(82, 235);
+            this.label18.Location = new System.Drawing.Point(39, 223);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(56, 21);
             this.label18.TabIndex = 51;
@@ -690,22 +694,22 @@
             // 
             // tbx_mavoucher
             // 
-            this.tbx_mavoucher.Location = new System.Drawing.Point(162, 107);
+            this.tbx_mavoucher.Location = new System.Drawing.Point(119, 95);
             this.tbx_mavoucher.Name = "tbx_mavoucher";
             this.tbx_mavoucher.Size = new System.Drawing.Size(122, 29);
             this.tbx_mavoucher.TabIndex = 50;
             // 
             // tbx_tenvoucher
             // 
-            this.tbx_tenvoucher.Location = new System.Drawing.Point(162, 140);
+            this.tbx_tenvoucher.Location = new System.Drawing.Point(119, 128);
             this.tbx_tenvoucher.Name = "tbx_tenvoucher";
-            this.tbx_tenvoucher.Size = new System.Drawing.Size(122, 29);
+            this.tbx_tenvoucher.Size = new System.Drawing.Size(276, 29);
             this.tbx_tenvoucher.TabIndex = 49;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(82, 140);
+            this.label19.Location = new System.Drawing.Point(39, 128);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(36, 21);
             this.label19.TabIndex = 48;
@@ -714,7 +718,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(82, 110);
+            this.label20.Location = new System.Drawing.Point(39, 98);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(33, 21);
             this.label20.TabIndex = 47;
@@ -743,7 +747,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_shownhanvien)).EndInit();
             this.tabp_voucher.ResumeLayout(false);
             this.tabp_voucher.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_giatrivoucher)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showvoucher)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_soluongvoucher)).EndInit();
             this.ResumeLayout(false);
@@ -813,6 +816,6 @@
         private Button btn_suavoucher;
         private Button btn_xoavoucher;
         private Button btn_themvoucher;
-        private NumericUpDown nud_giatrivoucher;
+        private TextBox tbx_giatrivoucher;
     }
 }

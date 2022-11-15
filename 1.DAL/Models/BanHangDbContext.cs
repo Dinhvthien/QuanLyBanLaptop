@@ -28,7 +28,7 @@ namespace _1.DAL.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring((optionsBuilder.
-                UseSqlServer("Data Source=DESKTOP-3S9P0UC\\SQLEXPRESS;Initial Catalog=QuanLyBanLaptop_da1;"+
+                UseSqlServer("Data Source=DESKTOP-3S9P0UC\\SQLEXPRESS;Initial Catalog=QuanLyBanLaptop_da1;" +
                 "Persist Security Info=True;User ID=theuniverse;Password=theuniverse")));
 
         }

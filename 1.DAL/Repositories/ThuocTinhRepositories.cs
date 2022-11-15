@@ -1,10 +1,5 @@
 ﻿using _1.DAL.IRepositories;
 using _1.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _1.DAL.Repositories
 {
@@ -13,8 +8,8 @@ namespace _1.DAL.Repositories
         BanHangDbContext context = new BanHangDbContext();
         public bool Add(ThuocTinh tt)
         {
-           if(tt ==null) return false;
-           context.ThuocTinhs.Add(tt);
+            if (tt == null) return false;
+            context.ThuocTinhs.Add(tt);
             context.SaveChanges();
             return true;
         }
@@ -37,7 +32,7 @@ namespace _1.DAL.Repositories
         {
             if (tt == null) return false;
             var t = context.ThuocTinhs.Find(tt.ID);
-            t.Ten=tt.Ten;
+            t.Ten = tt.Ten;
             context.Update(t);
             context.SaveChanges();
             return true;

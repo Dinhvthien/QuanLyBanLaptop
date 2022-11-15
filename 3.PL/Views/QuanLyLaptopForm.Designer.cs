@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.tp_chitietlaptop = new System.Windows.Forms.TabPage();
-            this.nud_gianhap = new System.Windows.Forms.NumericUpDown();
-            this.nud_giaban = new System.Windows.Forms.NumericUpDown();
             this.nud_soluong = new System.Windows.Forms.NumericUpDown();
             this.dtg_showchitietlaptop = new System.Windows.Forms.DataGridView();
             this.cbb_mams = new System.Windows.Forms.ComboBox();
-            this.cbb_malaptop = new System.Windows.Forms.ComboBox();
+            this.cbb_malaptopctlt = new System.Windows.Forms.ComboBox();
             this.cbb_mansx = new System.Windows.Forms.ComboBox();
             this.tbx_mota = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -59,7 +57,7 @@
             this.btn_themlt = new System.Windows.Forms.Button();
             this.tp_thuoctinh = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cbb_idlaptop = new System.Windows.Forms.ComboBox();
+            this.cbb_idlaptoptt = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtg_showthuoctinh = new System.Windows.Forms.DataGridView();
             this.btn_suathuoctinh = new System.Windows.Forms.Button();
@@ -102,9 +100,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_themms = new System.Windows.Forms.Button();
             this.tabctrl_quanlylaptop = new System.Windows.Forms.TabControl();
+            this.tbx_ctltgianhap = new System.Windows.Forms.TextBox();
+            this.tbx_ctltgiaban = new System.Windows.Forms.TextBox();
             this.tp_chitietlaptop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_gianhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_giaban)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showchitietlaptop)).BeginInit();
             this.tp_laptop.SuspendLayout();
@@ -128,12 +126,12 @@
             // tp_chitietlaptop
             // 
             this.tp_chitietlaptop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.tp_chitietlaptop.Controls.Add(this.nud_gianhap);
-            this.tp_chitietlaptop.Controls.Add(this.nud_giaban);
+            this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgiaban);
+            this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgianhap);
             this.tp_chitietlaptop.Controls.Add(this.nud_soluong);
             this.tp_chitietlaptop.Controls.Add(this.dtg_showchitietlaptop);
             this.tp_chitietlaptop.Controls.Add(this.cbb_mams);
-            this.tp_chitietlaptop.Controls.Add(this.cbb_malaptop);
+            this.tp_chitietlaptop.Controls.Add(this.cbb_malaptopctlt);
             this.tp_chitietlaptop.Controls.Add(this.cbb_mansx);
             this.tp_chitietlaptop.Controls.Add(this.tbx_mota);
             this.tp_chitietlaptop.Controls.Add(this.label22);
@@ -153,20 +151,6 @@
             this.tp_chitietlaptop.TabIndex = 6;
             this.tp_chitietlaptop.Text = "Chi Tiết Laptop";
             // 
-            // nud_gianhap
-            // 
-            this.nud_gianhap.Location = new System.Drawing.Point(128, 197);
-            this.nud_gianhap.Name = "nud_gianhap";
-            this.nud_gianhap.Size = new System.Drawing.Size(97, 29);
-            this.nud_gianhap.TabIndex = 33;
-            // 
-            // nud_giaban
-            // 
-            this.nud_giaban.Location = new System.Drawing.Point(128, 229);
-            this.nud_giaban.Name = "nud_giaban";
-            this.nud_giaban.Size = new System.Drawing.Size(97, 29);
-            this.nud_giaban.TabIndex = 32;
-            // 
             // nud_soluong
             // 
             this.nud_soluong.Location = new System.Drawing.Point(128, 168);
@@ -178,10 +162,10 @@
             // 
             this.dtg_showchitietlaptop.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showchitietlaptop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showchitietlaptop.Location = new System.Drawing.Point(270, 51);
+            this.dtg_showchitietlaptop.Location = new System.Drawing.Point(270, 6);
             this.dtg_showchitietlaptop.Name = "dtg_showchitietlaptop";
             this.dtg_showchitietlaptop.RowTemplate.Height = 25;
-            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(564, 336);
+            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(606, 381);
             this.dtg_showchitietlaptop.TabIndex = 30;
             // 
             // cbb_mams
@@ -192,13 +176,13 @@
             this.cbb_mams.Size = new System.Drawing.Size(121, 29);
             this.cbb_mams.TabIndex = 26;
             // 
-            // cbb_malaptop
+            // cbb_malaptopctlt
             // 
-            this.cbb_malaptop.FormattingEnabled = true;
-            this.cbb_malaptop.Location = new System.Drawing.Point(128, 35);
-            this.cbb_malaptop.Name = "cbb_malaptop";
-            this.cbb_malaptop.Size = new System.Drawing.Size(121, 29);
-            this.cbb_malaptop.TabIndex = 25;
+            this.cbb_malaptopctlt.FormattingEnabled = true;
+            this.cbb_malaptopctlt.Location = new System.Drawing.Point(128, 35);
+            this.cbb_malaptopctlt.Name = "cbb_malaptopctlt";
+            this.cbb_malaptopctlt.Size = new System.Drawing.Size(121, 29);
+            this.cbb_malaptopctlt.TabIndex = 25;
             // 
             // cbb_mansx
             // 
@@ -269,6 +253,7 @@
             this.btn_suactlt.TabIndex = 13;
             this.btn_suactlt.Text = "Sửa";
             this.btn_suactlt.UseVisualStyleBackColor = true;
+            this.btn_suactlt.Click += new System.EventHandler(this.btn_suactlt_Click);
             // 
             // btn_xoactlt
             // 
@@ -279,6 +264,7 @@
             this.btn_xoactlt.TabIndex = 12;
             this.btn_xoactlt.Text = "Xóa";
             this.btn_xoactlt.UseVisualStyleBackColor = true;
+            this.btn_xoactlt.Click += new System.EventHandler(this.btn_xoactlt_Click);
             // 
             // label13
             // 
@@ -307,6 +293,7 @@
             this.btn_themctlt.TabIndex = 7;
             this.btn_themctlt.Text = "Thêm";
             this.btn_themctlt.UseVisualStyleBackColor = true;
+            this.btn_themctlt.Click += new System.EventHandler(this.btn_themctlt_Click);
             // 
             // tp_laptop
             // 
@@ -344,6 +331,7 @@
             this.dtg_showlaptop.RowTemplate.Height = 25;
             this.dtg_showlaptop.Size = new System.Drawing.Size(640, 334);
             this.dtg_showlaptop.TabIndex = 7;
+            this.dtg_showlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showlaptop_CellClick);
             // 
             // btn_sualt
             // 
@@ -354,6 +342,7 @@
             this.btn_sualt.TabIndex = 6;
             this.btn_sualt.Text = "Sửa";
             this.btn_sualt.UseVisualStyleBackColor = true;
+            this.btn_sualt.Click += new System.EventHandler(this.btn_sualt_Click);
             // 
             // btn_xoalt
             // 
@@ -364,6 +353,7 @@
             this.btn_xoalt.TabIndex = 5;
             this.btn_xoalt.Text = "Xóa";
             this.btn_xoalt.UseVisualStyleBackColor = true;
+            this.btn_xoalt.Click += new System.EventHandler(this.btn_xoalt_Click);
             // 
             // tbx_malaptop
             // 
@@ -406,6 +396,7 @@
             this.btn_themlt.TabIndex = 0;
             this.btn_themlt.Text = "Thêm";
             this.btn_themlt.UseVisualStyleBackColor = true;
+            this.btn_themlt.Click += new System.EventHandler(this.btn_themlt_Click);
             // 
             // tp_thuoctinh
             // 
@@ -421,7 +412,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel5.Controls.Add(this.cbb_idlaptop);
+            this.panel5.Controls.Add(this.cbb_idlaptoptt);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.dtg_showthuoctinh);
             this.panel5.Controls.Add(this.btn_suathuoctinh);
@@ -436,13 +427,13 @@
             this.panel5.Size = new System.Drawing.Size(829, 361);
             this.panel5.TabIndex = 2;
             // 
-            // cbb_idlaptop
+            // cbb_idlaptoptt
             // 
-            this.cbb_idlaptop.FormattingEnabled = true;
-            this.cbb_idlaptop.Location = new System.Drawing.Point(207, 115);
-            this.cbb_idlaptop.Name = "cbb_idlaptop";
-            this.cbb_idlaptop.Size = new System.Drawing.Size(121, 29);
-            this.cbb_idlaptop.TabIndex = 9;
+            this.cbb_idlaptoptt.FormattingEnabled = true;
+            this.cbb_idlaptoptt.Location = new System.Drawing.Point(207, 115);
+            this.cbb_idlaptoptt.Name = "cbb_idlaptoptt";
+            this.cbb_idlaptoptt.Size = new System.Drawing.Size(121, 29);
+            this.cbb_idlaptoptt.TabIndex = 9;
             // 
             // label6
             // 
@@ -462,6 +453,7 @@
             this.dtg_showthuoctinh.RowTemplate.Height = 25;
             this.dtg_showthuoctinh.Size = new System.Drawing.Size(449, 317);
             this.dtg_showthuoctinh.TabIndex = 7;
+            this.dtg_showthuoctinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showthuoctinh_CellClick);
             // 
             // btn_suathuoctinh
             // 
@@ -472,6 +464,7 @@
             this.btn_suathuoctinh.TabIndex = 6;
             this.btn_suathuoctinh.Text = "Sửa";
             this.btn_suathuoctinh.UseVisualStyleBackColor = true;
+            this.btn_suathuoctinh.Click += new System.EventHandler(this.btn_suathuoctinh_Click);
             // 
             // btn_xoathuoctinh
             // 
@@ -482,6 +475,7 @@
             this.btn_xoathuoctinh.TabIndex = 5;
             this.btn_xoathuoctinh.Text = "Xóa";
             this.btn_xoathuoctinh.UseVisualStyleBackColor = true;
+            this.btn_xoathuoctinh.Click += new System.EventHandler(this.btn_xoathuoctinh_Click);
             // 
             // tbx_tenthuoctinh
             // 
@@ -524,6 +518,7 @@
             this.btn_themthuoctinh.TabIndex = 0;
             this.btn_themthuoctinh.Text = "Thêm";
             this.btn_themthuoctinh.UseVisualStyleBackColor = true;
+            this.btn_themthuoctinh.Click += new System.EventHandler(this.btn_themthuoctinh_Click);
             // 
             // tp_giatri
             // 
@@ -580,6 +575,7 @@
             this.dtg_showgiatri.RowTemplate.Height = 25;
             this.dtg_showgiatri.Size = new System.Drawing.Size(492, 261);
             this.dtg_showgiatri.TabIndex = 7;
+            this.dtg_showgiatri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showgiatri_CellClick);
             // 
             // btn_suagiatri
             // 
@@ -590,6 +586,7 @@
             this.btn_suagiatri.TabIndex = 6;
             this.btn_suagiatri.Text = "Sửa";
             this.btn_suagiatri.UseVisualStyleBackColor = true;
+            this.btn_suagiatri.Click += new System.EventHandler(this.btn_suagiatri_Click);
             // 
             // btn_xoagiatri
             // 
@@ -600,6 +597,7 @@
             this.btn_xoagiatri.TabIndex = 5;
             this.btn_xoagiatri.Text = "Xóa";
             this.btn_xoagiatri.UseVisualStyleBackColor = true;
+            this.btn_xoagiatri.Click += new System.EventHandler(this.btn_xoagiatri_Click);
             // 
             // tbx_magiatri
             // 
@@ -642,6 +640,7 @@
             this.btn_themgiatri.TabIndex = 0;
             this.btn_themgiatri.Text = "Thêm";
             this.btn_themgiatri.UseVisualStyleBackColor = true;
+            this.btn_themgiatri.Click += new System.EventHandler(this.btn_themgiatri_Click);
             // 
             // tp_nsx
             // 
@@ -674,11 +673,12 @@
             // 
             this.dtg_shownsx.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_shownsx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_shownsx.Location = new System.Drawing.Point(165, 16);
+            this.dtg_shownsx.Location = new System.Drawing.Point(192, 15);
             this.dtg_shownsx.Name = "dtg_shownsx";
             this.dtg_shownsx.RowTemplate.Height = 25;
-            this.dtg_shownsx.Size = new System.Drawing.Size(640, 334);
+            this.dtg_shownsx.Size = new System.Drawing.Size(339, 284);
             this.dtg_shownsx.TabIndex = 7;
+            this.dtg_shownsx.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_shownsx_CellClick);
             // 
             // btn_suansx
             // 
@@ -689,6 +689,7 @@
             this.btn_suansx.TabIndex = 6;
             this.btn_suansx.Text = "Sửa";
             this.btn_suansx.UseVisualStyleBackColor = true;
+            this.btn_suansx.Click += new System.EventHandler(this.btn_suansx_Click);
             // 
             // btn_xoansx
             // 
@@ -699,6 +700,7 @@
             this.btn_xoansx.TabIndex = 5;
             this.btn_xoansx.Text = "Xóa";
             this.btn_xoansx.UseVisualStyleBackColor = true;
+            this.btn_xoansx.Click += new System.EventHandler(this.btn_xoansx_Click);
             // 
             // tbx_mansx
             // 
@@ -741,6 +743,7 @@
             this.btn_themnsx.TabIndex = 0;
             this.btn_themnsx.Text = "Thêm";
             this.btn_themnsx.UseVisualStyleBackColor = true;
+            this.btn_themnsx.Click += new System.EventHandler(this.btn_themnsx_Click);
             // 
             // tp_mausac
             // 
@@ -773,11 +776,12 @@
             // 
             this.dtg_showmausac.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showmausac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showmausac.Location = new System.Drawing.Point(176, 13);
+            this.dtg_showmausac.Location = new System.Drawing.Point(176, 34);
             this.dtg_showmausac.Name = "dtg_showmausac";
             this.dtg_showmausac.RowTemplate.Height = 25;
-            this.dtg_showmausac.Size = new System.Drawing.Size(640, 334);
+            this.dtg_showmausac.Size = new System.Drawing.Size(379, 296);
             this.dtg_showmausac.TabIndex = 7;
+            this.dtg_showmausac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showmausac_CellClick);
             // 
             // btn_suams
             // 
@@ -788,6 +792,7 @@
             this.btn_suams.TabIndex = 6;
             this.btn_suams.Text = "Sửa";
             this.btn_suams.UseVisualStyleBackColor = true;
+            this.btn_suams.Click += new System.EventHandler(this.btn_suams_Click);
             // 
             // btn_xoams
             // 
@@ -798,6 +803,7 @@
             this.btn_xoams.TabIndex = 5;
             this.btn_xoams.Text = "Xóa";
             this.btn_xoams.UseVisualStyleBackColor = true;
+            this.btn_xoams.Click += new System.EventHandler(this.btn_xoams_Click);
             // 
             // tbx_mams
             // 
@@ -840,6 +846,7 @@
             this.btn_themms.TabIndex = 0;
             this.btn_themms.Text = "Thêm";
             this.btn_themms.UseVisualStyleBackColor = true;
+            this.btn_themms.Click += new System.EventHandler(this.btn_themms_Click);
             // 
             // tabctrl_quanlylaptop
             // 
@@ -857,6 +864,20 @@
             this.tabctrl_quanlylaptop.Size = new System.Drawing.Size(890, 459);
             this.tabctrl_quanlylaptop.TabIndex = 0;
             // 
+            // tbx_ctltgianhap
+            // 
+            this.tbx_ctltgianhap.Location = new System.Drawing.Point(113, 199);
+            this.tbx_ctltgianhap.Name = "tbx_ctltgianhap";
+            this.tbx_ctltgianhap.Size = new System.Drawing.Size(136, 29);
+            this.tbx_ctltgianhap.TabIndex = 32;
+            // 
+            // tbx_ctltgiaban
+            // 
+            this.tbx_ctltgiaban.Location = new System.Drawing.Point(113, 231);
+            this.tbx_ctltgiaban.Name = "tbx_ctltgiaban";
+            this.tbx_ctltgiaban.Size = new System.Drawing.Size(136, 29);
+            this.tbx_ctltgiaban.TabIndex = 33;
+            // 
             // QuanLyLaptopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -867,10 +888,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyLaptopForm";
             this.Text = "QuanLyLaptopForm";
+            this.Load += new System.EventHandler(this.QuanLyLaptopForm_Load);
             this.tp_chitietlaptop.ResumeLayout(false);
             this.tp_chitietlaptop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_gianhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_giaban)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_soluong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showchitietlaptop)).EndInit();
             this.tp_laptop.ResumeLayout(false);
@@ -901,12 +921,10 @@
         #endregion
 
         private TabPage tp_chitietlaptop;
-        private NumericUpDown nud_gianhap;
-        private NumericUpDown nud_giaban;
         private NumericUpDown nud_soluong;
         private DataGridView dtg_showchitietlaptop;
         private ComboBox cbb_mams;
-        private ComboBox cbb_malaptop;
+        private ComboBox cbb_malaptopctlt;
         private ComboBox cbb_mansx;
         private TextBox tbx_mota;
         private Label label22;
@@ -931,7 +949,7 @@
         private Button btn_themlt;
         private TabPage tp_thuoctinh;
         private Panel panel5;
-        private ComboBox cbb_idlaptop;
+        private ComboBox cbb_idlaptoptt;
         private Label label6;
         private DataGridView dtg_showthuoctinh;
         private Button btn_suathuoctinh;
@@ -974,5 +992,7 @@
         private Label label2;
         private Button btn_themms;
         private TabControl tabctrl_quanlylaptop;
+        private TextBox tbx_ctltgiaban;
+        private TextBox tbx_ctltgianhap;
     }
 }
