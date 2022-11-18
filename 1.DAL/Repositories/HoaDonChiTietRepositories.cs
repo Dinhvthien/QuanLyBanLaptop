@@ -17,7 +17,7 @@ namespace _1.DAL.Repositories
         public bool Delete(HoaDonChiTiet hdct)
         {
             if (hdct == null) return false;
-            var t = context.HoaDonChiTiets.FirstOrDefault(a => a.IDHoaDon == hdct.IDHoaDon && a.IDChiTietLapTop == hdct.IDChiTietLapTop);
+            var t = context.HoaDonChiTiets.Find(hdct.ID);
             context.Remove(t);
             context.SaveChanges();
             return true;
@@ -31,7 +31,7 @@ namespace _1.DAL.Repositories
         public bool Update(HoaDonChiTiet hdct)
         {
             if (hdct == null) return false;
-            var t = context.HoaDonChiTiets.FirstOrDefault(a => a.IDHoaDon == hdct.IDHoaDon && a.IDChiTietLapTop == hdct.IDChiTietLapTop);
+            var t = context.HoaDonChiTiets.Find(hdct.ID);
             t.SoLuong = hdct.SoLuong;
             t.GiaTruoc = hdct.GiaTruoc;
             t.NgayTao = hdct.NgayTao;

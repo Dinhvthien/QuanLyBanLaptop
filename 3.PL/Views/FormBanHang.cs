@@ -35,7 +35,7 @@ namespace _3.PL.Views
 
         private void FormBanHang_Load(object sender, EventArgs e)
         {
-            LoadDataKhachHang(khachHangService.GetAllKhachHang());
+            LoadDataKhachHang(khachHangService.GetKhachHang());
         }
 
         private void btn_themkhachhang_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace _3.PL.Views
             else
             {
                 MessageBox.Show(khachHangService.AddKhachHang(thao));
-                LoadDataKhachHang(khachHangService.GetAllKhachHang());
+                LoadDataKhachHang(khachHangService.GetKhachHang());
             }
         }
 
@@ -65,7 +65,7 @@ namespace _3.PL.Views
             thao.DiaChi = tbx_diachikhachhang.Text;
             thao.SDT = tbx_sdtkhachhang.Text;
             MessageBox.Show(khachHangService.UpdateKhachHang(thao));
-            LoadDataKhachHang(khachHangService.GetAllKhachHang());
+            LoadDataKhachHang(khachHangService.GetKhachHang());
         }
 
         private void btn_xoakhachhang_Click(object sender, EventArgs e)
@@ -73,16 +73,30 @@ namespace _3.PL.Views
             KhachHangView thao = new KhachHangView();
             thao.ID = GetIdKhachHang;
             MessageBox.Show(khachHangService.DeleteKhachHang(thao));
-            LoadDataKhachHang(khachHangService.GetAllKhachHang());
+            LoadDataKhachHang(khachHangService.GetKhachHang());
         }
 
         private void dtg_showkhachhang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetIdKhachHang = Guid.Parse(dtg_showkhachhang.CurrentRow.Cells[0].Value.ToString());
-            tbx_makhachhang.Text = dtg_showkhachhang.CurrentRow.Cells[2].Value.ToString();
-            tbx_tenkhachhang.Text = dtg_showkhachhang.CurrentRow.Cells[3].Value.ToString();
-            tbx_diachikhachhang.Text = dtg_showkhachhang.CurrentRow.Cells[4].Value.ToString();
-            tbx_sdtkhachhang.Text = dtg_showkhachhang.CurrentRow.Cells[5].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow x = dtg_showkhachhang.Rows[e.RowIndex];
+                GetIdKhachHang = Guid.Parse(dtg_showkhachhang.CurrentRow.Cells[0].Value.ToString());
+                tbx_makhachhang.Text = x.Cells[2].Value.ToString();
+                tbx_tenkhachhang.Text = x.Cells[3].Value.ToString();
+                tbx_diachikhachhang.Text = x.Cells[4].Value.ToString();
+                tbx_sdtkhachhang.Text = x.Cells[5].Value.ToString();
+            }
+
         }
+
+        private void tbx_timsdtkhachhang_TextChanged(object sender, EventArgs e)
+        {
+            //var thao = khachHangService.GetKhachHang().Where(a => a.SDT.Contains(tbx_timsdtkhachhang.Text)).ToList();
+            //LoadDataKhachHang(thao);
+            var thao = khachHangService.FindKhachHang(tbx_timsdtkhachhang.Text);
+            LoadDataKhachHang(thao);
+        }
+
     }
 }

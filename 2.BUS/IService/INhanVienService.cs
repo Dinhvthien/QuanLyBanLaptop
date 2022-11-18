@@ -11,7 +11,7 @@ namespace _2.BUS.IService
         List<NhanVienView> GetAllNhanVien();
         bool CheckSdtMkNhanVien(string taikhoan, string matkhau);
 
-        bool CheckQuanLy(string taikhoan, string matkhau,string cv);
+        bool CheckQuanLy(string taikhoan, string matkhau, string cv);
 
     }
 }

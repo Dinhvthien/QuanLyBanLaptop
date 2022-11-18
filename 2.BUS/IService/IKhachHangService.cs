@@ -7,7 +7,8 @@ namespace _2.BUS.IService
         string AddKhachHang(KhachHangView khv);
         string UpdateKhachHang(KhachHangView khv);
         string DeleteKhachHang(KhachHangView khv);
-        List<KhachHangView> GetAllKhachHang();
+        List<KhachHangView> GetKhachHang();
         bool CheckMa(string ma);
+        List<KhachHangView> FindKhachHang(string sdt);
     }
 }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.tp_chitietlaptop = new System.Windows.Forms.TabPage();
+            this.tbx_machitietlaptop = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbx_ctltgiaban = new System.Windows.Forms.TextBox();
+            this.tbx_ctltgianhap = new System.Windows.Forms.TextBox();
             this.nud_soluong = new System.Windows.Forms.NumericUpDown();
             this.dtg_showchitietlaptop = new System.Windows.Forms.DataGridView();
             this.cbb_mams = new System.Windows.Forms.ComboBox();
@@ -100,8 +104,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_themms = new System.Windows.Forms.Button();
             this.tabctrl_quanlylaptop = new System.Windows.Forms.TabControl();
-            this.tbx_ctltgianhap = new System.Windows.Forms.TextBox();
-            this.tbx_ctltgiaban = new System.Windows.Forms.TextBox();
             this.tp_chitietlaptop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showchitietlaptop)).BeginInit();
@@ -126,6 +128,8 @@
             // tp_chitietlaptop
             // 
             this.tp_chitietlaptop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tp_chitietlaptop.Controls.Add(this.tbx_machitietlaptop);
+            this.tp_chitietlaptop.Controls.Add(this.label18);
             this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgiaban);
             this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgianhap);
             this.tp_chitietlaptop.Controls.Add(this.nud_soluong);
@@ -147,13 +151,43 @@
             this.tp_chitietlaptop.Location = new System.Drawing.Point(4, 33);
             this.tp_chitietlaptop.Name = "tp_chitietlaptop";
             this.tp_chitietlaptop.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_chitietlaptop.Size = new System.Drawing.Size(882, 422);
+            this.tp_chitietlaptop.Size = new System.Drawing.Size(652, 382);
             this.tp_chitietlaptop.TabIndex = 6;
             this.tp_chitietlaptop.Text = "Chi Tiết Laptop";
             // 
+            // tbx_machitietlaptop
+            // 
+            this.tbx_machitietlaptop.Location = new System.Drawing.Point(130, 24);
+            this.tbx_machitietlaptop.Name = "tbx_machitietlaptop";
+            this.tbx_machitietlaptop.Size = new System.Drawing.Size(126, 29);
+            this.tbx_machitietlaptop.TabIndex = 35;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(71, 32);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(33, 21);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "Mã";
+            // 
+            // tbx_ctltgiaban
+            // 
+            this.tbx_ctltgiaban.Location = new System.Drawing.Point(115, 255);
+            this.tbx_ctltgiaban.Name = "tbx_ctltgiaban";
+            this.tbx_ctltgiaban.Size = new System.Drawing.Size(136, 29);
+            this.tbx_ctltgiaban.TabIndex = 33;
+            // 
+            // tbx_ctltgianhap
+            // 
+            this.tbx_ctltgianhap.Location = new System.Drawing.Point(115, 223);
+            this.tbx_ctltgianhap.Name = "tbx_ctltgianhap";
+            this.tbx_ctltgianhap.Size = new System.Drawing.Size(136, 29);
+            this.tbx_ctltgianhap.TabIndex = 32;
+            // 
             // nud_soluong
             // 
-            this.nud_soluong.Location = new System.Drawing.Point(128, 168);
+            this.nud_soluong.Location = new System.Drawing.Point(130, 192);
             this.nud_soluong.Name = "nud_soluong";
             this.nud_soluong.Size = new System.Drawing.Size(45, 29);
             this.nud_soluong.TabIndex = 31;
@@ -162,16 +196,18 @@
             // 
             this.dtg_showchitietlaptop.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showchitietlaptop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showchitietlaptop.Location = new System.Drawing.Point(270, 6);
+            this.dtg_showchitietlaptop.Location = new System.Drawing.Point(270, 3);
             this.dtg_showchitietlaptop.Name = "dtg_showchitietlaptop";
+            this.dtg_showchitietlaptop.ReadOnly = true;
             this.dtg_showchitietlaptop.RowTemplate.Height = 25;
-            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(606, 381);
+            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(376, 374);
             this.dtg_showchitietlaptop.TabIndex = 30;
+            this.dtg_showchitietlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showchitietlaptop_CellClick);
             // 
             // cbb_mams
             // 
             this.cbb_mams.FormattingEnabled = true;
-            this.cbb_mams.Location = new System.Drawing.Point(128, 102);
+            this.cbb_mams.Location = new System.Drawing.Point(130, 126);
             this.cbb_mams.Name = "cbb_mams";
             this.cbb_mams.Size = new System.Drawing.Size(121, 29);
             this.cbb_mams.TabIndex = 26;
@@ -179,7 +215,7 @@
             // cbb_malaptopctlt
             // 
             this.cbb_malaptopctlt.FormattingEnabled = true;
-            this.cbb_malaptopctlt.Location = new System.Drawing.Point(128, 35);
+            this.cbb_malaptopctlt.Location = new System.Drawing.Point(130, 59);
             this.cbb_malaptopctlt.Name = "cbb_malaptopctlt";
             this.cbb_malaptopctlt.Size = new System.Drawing.Size(121, 29);
             this.cbb_malaptopctlt.TabIndex = 25;
@@ -187,14 +223,14 @@
             // cbb_mansx
             // 
             this.cbb_mansx.FormattingEnabled = true;
-            this.cbb_mansx.Location = new System.Drawing.Point(128, 67);
+            this.cbb_mansx.Location = new System.Drawing.Point(130, 91);
             this.cbb_mansx.Name = "cbb_mansx";
             this.cbb_mansx.Size = new System.Drawing.Size(121, 29);
             this.cbb_mansx.TabIndex = 24;
             // 
             // tbx_mota
             // 
-            this.tbx_mota.Location = new System.Drawing.Point(128, 139);
+            this.tbx_mota.Location = new System.Drawing.Point(130, 163);
             this.tbx_mota.Name = "tbx_mota";
             this.tbx_mota.Size = new System.Drawing.Size(136, 29);
             this.tbx_mota.TabIndex = 22;
@@ -202,7 +238,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(35, 170);
+            this.label22.Location = new System.Drawing.Point(37, 194);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(73, 21);
             this.label22.TabIndex = 21;
@@ -211,7 +247,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(35, 142);
+            this.label21.Location = new System.Drawing.Point(37, 166);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 21);
             this.label21.TabIndex = 20;
@@ -220,7 +256,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(35, 110);
+            this.label17.Location = new System.Drawing.Point(37, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(97, 21);
             this.label17.TabIndex = 16;
@@ -229,7 +265,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(37, 231);
+            this.label16.Location = new System.Drawing.Point(39, 255);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 21);
             this.label16.TabIndex = 15;
@@ -238,7 +274,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(35, 199);
+            this.label15.Location = new System.Drawing.Point(37, 223);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 21);
             this.label15.TabIndex = 14;
@@ -269,7 +305,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 67);
+            this.label13.Location = new System.Drawing.Point(37, 91);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 21);
             this.label13.TabIndex = 9;
@@ -278,7 +314,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(35, 38);
+            this.label14.Location = new System.Drawing.Point(37, 62);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 21);
             this.label14.TabIndex = 8;
@@ -301,7 +337,7 @@
             this.tp_laptop.Location = new System.Drawing.Point(4, 33);
             this.tp_laptop.Name = "tp_laptop";
             this.tp_laptop.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_laptop.Size = new System.Drawing.Size(882, 422);
+            this.tp_laptop.Size = new System.Drawing.Size(652, 382);
             this.tp_laptop.TabIndex = 5;
             this.tp_laptop.Text = "Laptop";
             this.tp_laptop.UseVisualStyleBackColor = true;
@@ -326,10 +362,10 @@
             // 
             this.dtg_showlaptop.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showlaptop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showlaptop.Location = new System.Drawing.Point(165, 16);
+            this.dtg_showlaptop.Location = new System.Drawing.Point(290, 22);
             this.dtg_showlaptop.Name = "dtg_showlaptop";
             this.dtg_showlaptop.RowTemplate.Height = 25;
-            this.dtg_showlaptop.Size = new System.Drawing.Size(640, 334);
+            this.dtg_showlaptop.Size = new System.Drawing.Size(329, 303);
             this.dtg_showlaptop.TabIndex = 7;
             this.dtg_showlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showlaptop_CellClick);
             // 
@@ -359,14 +395,14 @@
             // 
             this.tbx_malaptop.Location = new System.Drawing.Point(45, 34);
             this.tbx_malaptop.Name = "tbx_malaptop";
-            this.tbx_malaptop.Size = new System.Drawing.Size(100, 29);
+            this.tbx_malaptop.Size = new System.Drawing.Size(236, 29);
             this.tbx_malaptop.TabIndex = 4;
             // 
             // tbx_tenlaptop
             // 
             this.tbx_tenlaptop.Location = new System.Drawing.Point(45, 76);
             this.tbx_tenlaptop.Name = "tbx_tenlaptop";
-            this.tbx_tenlaptop.Size = new System.Drawing.Size(100, 29);
+            this.tbx_tenlaptop.Size = new System.Drawing.Size(236, 29);
             this.tbx_tenlaptop.TabIndex = 3;
             // 
             // label11
@@ -404,7 +440,7 @@
             this.tp_thuoctinh.Location = new System.Drawing.Point(4, 33);
             this.tp_thuoctinh.Name = "tp_thuoctinh";
             this.tp_thuoctinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_thuoctinh.Size = new System.Drawing.Size(882, 422);
+            this.tp_thuoctinh.Size = new System.Drawing.Size(652, 382);
             this.tp_thuoctinh.TabIndex = 4;
             this.tp_thuoctinh.Text = "Thuộc tính";
             this.tp_thuoctinh.UseVisualStyleBackColor = true;
@@ -430,7 +466,7 @@
             // cbb_idlaptoptt
             // 
             this.cbb_idlaptoptt.FormattingEnabled = true;
-            this.cbb_idlaptoptt.Location = new System.Drawing.Point(207, 115);
+            this.cbb_idlaptoptt.Location = new System.Drawing.Point(122, 92);
             this.cbb_idlaptoptt.Name = "cbb_idlaptoptt";
             this.cbb_idlaptoptt.Size = new System.Drawing.Size(121, 29);
             this.cbb_idlaptoptt.TabIndex = 9;
@@ -438,7 +474,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 118);
+            this.label6.Location = new System.Drawing.Point(3, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 21);
             this.label6.TabIndex = 8;
@@ -451,7 +487,7 @@
             this.dtg_showthuoctinh.Location = new System.Drawing.Point(356, 16);
             this.dtg_showthuoctinh.Name = "dtg_showthuoctinh";
             this.dtg_showthuoctinh.RowTemplate.Height = 25;
-            this.dtg_showthuoctinh.Size = new System.Drawing.Size(449, 317);
+            this.dtg_showthuoctinh.Size = new System.Drawing.Size(263, 317);
             this.dtg_showthuoctinh.TabIndex = 7;
             this.dtg_showthuoctinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showthuoctinh_CellClick);
             // 
@@ -479,22 +515,22 @@
             // 
             // tbx_tenthuoctinh
             // 
-            this.tbx_tenthuoctinh.Location = new System.Drawing.Point(207, 31);
+            this.tbx_tenthuoctinh.Location = new System.Drawing.Point(122, 8);
             this.tbx_tenthuoctinh.Name = "tbx_tenthuoctinh";
-            this.tbx_tenthuoctinh.Size = new System.Drawing.Size(100, 29);
+            this.tbx_tenthuoctinh.Size = new System.Drawing.Size(143, 29);
             this.tbx_tenthuoctinh.TabIndex = 4;
             // 
             // tbx_mathuoctinh
             // 
-            this.tbx_mathuoctinh.Location = new System.Drawing.Point(207, 71);
+            this.tbx_mathuoctinh.Location = new System.Drawing.Point(122, 48);
             this.tbx_mathuoctinh.Name = "tbx_mathuoctinh";
-            this.tbx_mathuoctinh.Size = new System.Drawing.Size(100, 29);
+            this.tbx_mathuoctinh.Size = new System.Drawing.Size(143, 29);
             this.tbx_mathuoctinh.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(91, 79);
+            this.label9.Location = new System.Drawing.Point(6, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 21);
             this.label9.TabIndex = 2;
@@ -503,7 +539,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(88, 39);
+            this.label10.Location = new System.Drawing.Point(3, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 21);
             this.label10.TabIndex = 1;
@@ -526,7 +562,7 @@
             this.tp_giatri.Location = new System.Drawing.Point(4, 33);
             this.tp_giatri.Name = "tp_giatri";
             this.tp_giatri.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_giatri.Size = new System.Drawing.Size(882, 422);
+            this.tp_giatri.Size = new System.Drawing.Size(698, 381);
             this.tp_giatri.TabIndex = 3;
             this.tp_giatri.Text = "Giá trị";
             this.tp_giatri.UseVisualStyleBackColor = true;
@@ -546,21 +582,21 @@
             this.panel4.Controls.Add(this.btn_themgiatri);
             this.panel4.Location = new System.Drawing.Point(19, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(857, 361);
+            this.panel4.Size = new System.Drawing.Size(661, 361);
             this.panel4.TabIndex = 2;
             // 
             // cbb_idthuoctinh
             // 
             this.cbb_idthuoctinh.FormattingEnabled = true;
-            this.cbb_idthuoctinh.Location = new System.Drawing.Point(121, 104);
+            this.cbb_idthuoctinh.Location = new System.Drawing.Point(363, 75);
             this.cbb_idthuoctinh.Name = "cbb_idthuoctinh";
-            this.cbb_idthuoctinh.Size = new System.Drawing.Size(121, 29);
+            this.cbb_idthuoctinh.Size = new System.Drawing.Size(179, 29);
             this.cbb_idthuoctinh.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 118);
+            this.label5.Location = new System.Drawing.Point(243, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 21);
             this.label5.TabIndex = 8;
@@ -570,17 +606,17 @@
             // 
             this.dtg_showgiatri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showgiatri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showgiatri.Location = new System.Drawing.Point(296, 14);
+            this.dtg_showgiatri.Location = new System.Drawing.Point(3, 107);
             this.dtg_showgiatri.Name = "dtg_showgiatri";
             this.dtg_showgiatri.RowTemplate.Height = 25;
-            this.dtg_showgiatri.Size = new System.Drawing.Size(492, 261);
+            this.dtg_showgiatri.Size = new System.Drawing.Size(423, 242);
             this.dtg_showgiatri.TabIndex = 7;
             this.dtg_showgiatri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showgiatri_CellClick);
             // 
             // btn_suagiatri
             // 
             this.btn_suagiatri.ForeColor = System.Drawing.Color.Red;
-            this.btn_suagiatri.Location = new System.Drawing.Point(84, 188);
+            this.btn_suagiatri.Location = new System.Drawing.Point(467, 211);
             this.btn_suagiatri.Name = "btn_suagiatri";
             this.btn_suagiatri.Size = new System.Drawing.Size(75, 32);
             this.btn_suagiatri.TabIndex = 6;
@@ -591,7 +627,7 @@
             // btn_xoagiatri
             // 
             this.btn_xoagiatri.ForeColor = System.Drawing.Color.Red;
-            this.btn_xoagiatri.Location = new System.Drawing.Point(84, 238);
+            this.btn_xoagiatri.Location = new System.Drawing.Point(467, 261);
             this.btn_xoagiatri.Name = "btn_xoagiatri";
             this.btn_xoagiatri.Size = new System.Drawing.Size(75, 28);
             this.btn_xoagiatri.TabIndex = 5;
@@ -601,22 +637,22 @@
             // 
             // tbx_magiatri
             // 
-            this.tbx_magiatri.Location = new System.Drawing.Point(121, 34);
+            this.tbx_magiatri.Location = new System.Drawing.Point(363, 16);
             this.tbx_magiatri.Name = "tbx_magiatri";
-            this.tbx_magiatri.Size = new System.Drawing.Size(100, 29);
+            this.tbx_magiatri.Size = new System.Drawing.Size(247, 29);
             this.tbx_magiatri.TabIndex = 4;
             // 
             // tbx_thongsogt
             // 
-            this.tbx_thongsogt.Location = new System.Drawing.Point(121, 69);
+            this.tbx_thongsogt.Location = new System.Drawing.Point(363, 46);
             this.tbx_thongsogt.Name = "tbx_thongsogt";
-            this.tbx_thongsogt.Size = new System.Drawing.Size(100, 29);
+            this.tbx_thongsogt.Size = new System.Drawing.Size(234, 29);
             this.tbx_thongsogt.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 76);
+            this.label7.Location = new System.Drawing.Point(254, 46);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 21);
             this.label7.TabIndex = 2;
@@ -625,7 +661,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 34);
+            this.label8.Location = new System.Drawing.Point(254, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 21);
             this.label8.TabIndex = 1;
@@ -634,7 +670,7 @@
             // btn_themgiatri
             // 
             this.btn_themgiatri.ForeColor = System.Drawing.Color.Red;
-            this.btn_themgiatri.Location = new System.Drawing.Point(84, 142);
+            this.btn_themgiatri.Location = new System.Drawing.Point(467, 162);
             this.btn_themgiatri.Name = "btn_themgiatri";
             this.btn_themgiatri.Size = new System.Drawing.Size(75, 30);
             this.btn_themgiatri.TabIndex = 0;
@@ -648,7 +684,7 @@
             this.tp_nsx.Location = new System.Drawing.Point(4, 33);
             this.tp_nsx.Name = "tp_nsx";
             this.tp_nsx.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_nsx.Size = new System.Drawing.Size(882, 422);
+            this.tp_nsx.Size = new System.Drawing.Size(652, 382);
             this.tp_nsx.TabIndex = 1;
             this.tp_nsx.Text = "Nhà sản xuất";
             this.tp_nsx.UseVisualStyleBackColor = true;
@@ -747,18 +783,18 @@
             // 
             // tp_mausac
             // 
+            this.tp_mausac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tp_mausac.Controls.Add(this.panel1);
             this.tp_mausac.Location = new System.Drawing.Point(4, 33);
             this.tp_mausac.Name = "tp_mausac";
             this.tp_mausac.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_mausac.Size = new System.Drawing.Size(882, 422);
+            this.tp_mausac.Size = new System.Drawing.Size(652, 382);
             this.tp_mausac.TabIndex = 0;
             this.tp_mausac.Text = "Màu sắc";
-            this.tp_mausac.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.dtg_showmausac);
             this.panel1.Controls.Add(this.btn_suams);
             this.panel1.Controls.Add(this.btn_xoams);
@@ -769,7 +805,7 @@
             this.panel1.Controls.Add(this.btn_themms);
             this.panel1.Location = new System.Drawing.Point(20, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 361);
+            this.panel1.Size = new System.Drawing.Size(610, 364);
             this.panel1.TabIndex = 1;
             // 
             // dtg_showmausac
@@ -858,32 +894,19 @@
             this.tabctrl_quanlylaptop.Controls.Add(this.tp_laptop);
             this.tabctrl_quanlylaptop.Controls.Add(this.tp_chitietlaptop);
             this.tabctrl_quanlylaptop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.tabctrl_quanlylaptop.Location = new System.Drawing.Point(12, 4);
+            this.tabctrl_quanlylaptop.Location = new System.Drawing.Point(12, 32);
+            this.tabctrl_quanlylaptop.Multiline = true;
             this.tabctrl_quanlylaptop.Name = "tabctrl_quanlylaptop";
             this.tabctrl_quanlylaptop.SelectedIndex = 0;
-            this.tabctrl_quanlylaptop.Size = new System.Drawing.Size(890, 459);
+            this.tabctrl_quanlylaptop.Size = new System.Drawing.Size(706, 418);
             this.tabctrl_quanlylaptop.TabIndex = 0;
-            // 
-            // tbx_ctltgianhap
-            // 
-            this.tbx_ctltgianhap.Location = new System.Drawing.Point(113, 199);
-            this.tbx_ctltgianhap.Name = "tbx_ctltgianhap";
-            this.tbx_ctltgianhap.Size = new System.Drawing.Size(136, 29);
-            this.tbx_ctltgianhap.TabIndex = 32;
-            // 
-            // tbx_ctltgiaban
-            // 
-            this.tbx_ctltgiaban.Location = new System.Drawing.Point(113, 231);
-            this.tbx_ctltgiaban.Name = "tbx_ctltgiaban";
-            this.tbx_ctltgiaban.Size = new System.Drawing.Size(136, 29);
-            this.tbx_ctltgiaban.TabIndex = 33;
             // 
             // QuanLyLaptopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(914, 482);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(733, 466);
             this.Controls.Add(this.tabctrl_quanlylaptop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyLaptopForm";
@@ -994,5 +1017,7 @@
         private TabControl tabctrl_quanlylaptop;
         private TextBox tbx_ctltgiaban;
         private TextBox tbx_ctltgianhap;
+        private TextBox tbx_machitietlaptop;
+        private Label label18;
     }
 }

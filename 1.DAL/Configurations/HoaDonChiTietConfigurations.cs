@@ -9,7 +9,9 @@ namespace _1.DAL.Configurations
         public void Configure(EntityTypeBuilder<HoaDonChiTiet> builder)
         {
             builder.ToTable("HoaDonChiTiet");
-            builder.HasKey(x => new { x.IDHoaDon, x.IDChiTietLapTop });
+            // builder.HasKey(x => new { x.IDHoaDon, x.IDChiTietLapTop });
+            builder.HasKey(x => x.ID);
+            builder.Property(a => a.Ma).HasColumnName("Ma").HasColumnType("varchar(30)").IsRequired();
             builder.Property(p => p.SoLuong).HasColumnName("SoLuong").HasColumnType("int").IsRequired();
             builder.Property(p => p.GiaTruoc).HasColumnName("GiaTruoc").HasColumnType("money").IsRequired();
             builder.Property(p => p.GiaSauKhiGiam).HasColumnName("GiaSauKhiGiam").HasColumnType("money").IsRequired();

@@ -5,6 +5,7 @@ namespace _2.BUS.ViewModels
     public class ChiTietLaptopView
     {
         public Guid ID { get; set; }
+        public string Ma { get; set; }
         public Guid IDMauSac { get; set; }
         public string MoTa { get; set; }
         public int SoLuong { get; set; }

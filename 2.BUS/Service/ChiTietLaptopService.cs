@@ -20,6 +20,7 @@ namespace _2.BUS.Service
             if (ctltview == null) return "Thất bại";
             ChiTietLaptop t = new ChiTietLaptop();
             t.ID = ctltview.ID;
+            t.Ma = ctltview.Ma;
             t.IDMauSac = ctltview.IDMauSac;
             t.IDLaptop = ctltview.IDLaptop;
             t.IDNsx = ctltview.IDNsx;
@@ -48,11 +49,12 @@ namespace _2.BUS.Service
                          join c in mauSacRepositories.GetMauSac() on a.IDMauSac equals c.ID
                          join d in nsxRepositories.GetNsx() on a.IDNsx equals d.ID
                          join g in laptopRepositories.GetLaptop() on a.IDLaptop equals g.ID
-                         //join e in thuocTinhRepositories.GetThuocTinh() on g.ID equals e.IDLaptop
-                         //join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
+                         join e in thuocTinhRepositories.GetThuocTinh() on g.ID equals e.IDLaptop
+                         join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
                          select new ChiTietLaptopView
                          {
                              ID = a.ID,
+                             Ma = a.Ma,
                              MoTa = a.MoTa,
                              SoLuong = a.SoLuong,
                              GiaNhap = a.GiaNhap,
@@ -61,8 +63,8 @@ namespace _2.BUS.Service
                              MaNsx = d.Ma,
                              MaLaptop = g.Ma,
                              TenLaptop = g.Ten,
-                             //    TenThuocTinh = e.Ten,
-                             //ThongSoGiaTri = f.ThongSo
+                             TenThuocTinh = e.Ten,
+                             ThongSoGiaTri = f.ThongSo
 
                          }
 

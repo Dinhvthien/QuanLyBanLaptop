@@ -37,6 +37,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtg_viewindex = new System.Windows.Forms.DataGridView();
             this.panel_formload = new System.Windows.Forms.Panel();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.ms_menuindex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_viewindex)).BeginInit();
             this.panel_formload.SuspendLayout();
@@ -53,7 +54,7 @@
             this.mni_username});
             this.ms_menuindex.Location = new System.Drawing.Point(0, 0);
             this.ms_menuindex.Name = "ms_menuindex";
-            this.ms_menuindex.Size = new System.Drawing.Size(1147, 33);
+            this.ms_menuindex.Size = new System.Drawing.Size(1017, 33);
             this.ms_menuindex.TabIndex = 0;
             this.ms_menuindex.Text = "Menu Index";
             // 
@@ -105,10 +106,10 @@
             // 
             this.dtg_viewindex.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dtg_viewindex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_viewindex.Location = new System.Drawing.Point(35, 30);
+            this.dtg_viewindex.Location = new System.Drawing.Point(109, 133);
             this.dtg_viewindex.Name = "dtg_viewindex";
             this.dtg_viewindex.RowTemplate.Height = 25;
-            this.dtg_viewindex.Size = new System.Drawing.Size(969, 451);
+            this.dtg_viewindex.Size = new System.Drawing.Size(653, 227);
             this.dtg_viewindex.TabIndex = 1;
             // 
             // panel_formload
@@ -116,7 +117,7 @@
             this.panel_formload.Controls.Add(this.dtg_viewindex);
             this.panel_formload.Location = new System.Drawing.Point(128, 36);
             this.panel_formload.Name = "panel_formload";
-            this.panel_formload.Size = new System.Drawing.Size(1007, 593);
+            this.panel_formload.Size = new System.Drawing.Size(865, 415);
             this.panel_formload.TabIndex = 3;
             // 
             // IndexForm
@@ -124,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Violet;
-            this.ClientSize = new System.Drawing.Size(1147, 641);
+            this.ClientSize = new System.Drawing.Size(1017, 476);
             this.Controls.Add(this.panel_formload);
             this.Controls.Add(this.ms_menuindex);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -155,5 +156,6 @@
         private DataGridView dtg_viewindex;
         private ToolStripMenuItem tsmn_banhang;
         private Panel panel_formload;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

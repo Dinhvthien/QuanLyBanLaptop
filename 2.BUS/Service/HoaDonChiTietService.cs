@@ -13,6 +13,7 @@ namespace _2.BUS.Service
         {
             if (hdctview == null) return "Thất bại";
             HoaDonChiTiet hct = new HoaDonChiTiet();
+            hct.ID = hdctview.ID;
             hct.IDChiTietLapTop = hdctview.IDChiTietLapTop;
             hct.IDHoaDon = hdctview.IDHoaDon;
             hct.NgayTao = hdctview.NgayTao;
@@ -27,8 +28,7 @@ namespace _2.BUS.Service
         {
             if (hdctview == null) return "Thất bại";
             HoaDonChiTiet hct = new HoaDonChiTiet();
-            hct.IDChiTietLapTop = hdctview.IDChiTietLapTop;
-            hct.IDHoaDon = hdctview.IDHoaDon;
+            hct.ID = hdctview.ID;
             if (hoaDonChiTietRepositories.Delete(hct)) return "Thành công";
             else return "Thất bại";
         }
@@ -40,6 +40,7 @@ namespace _2.BUS.Service
                           from a in hoaDonChiTietRepositories.GetHoaDonChiTiet()
                           select new HoaDonChiTietView
                           {
+                              ID = a.ID,
                               IDChiTietLapTop = a.IDChiTietLapTop,
                               IDHoaDon = a.IDHoaDon,
                               SoLuong = a.SoLuong,
@@ -55,8 +56,7 @@ namespace _2.BUS.Service
         {
             if (hdctview == null) return "Thất bại";
             HoaDonChiTiet hct = new HoaDonChiTiet();
-            hct.IDChiTietLapTop = hdctview.IDChiTietLapTop;
-            hct.IDHoaDon = hdctview.IDHoaDon;
+            hct.ID = hdctview.ID;
             hct.NgayTao = hdctview.NgayTao;
             hct.SoLuong = hdctview.SoLuong;
             hct.GiaTruoc = hdctview.GiaTruoc;

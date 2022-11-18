@@ -2,6 +2,8 @@
 {
     public class HoaDonChiTiet
     {
+        public Guid ID { get; set; }
+        public string Ma { get; set; }
         public Guid IDHoaDon { get; set; }
         public Guid IDChiTietLapTop { get; set; }
         public int SoLuong { get; set; }

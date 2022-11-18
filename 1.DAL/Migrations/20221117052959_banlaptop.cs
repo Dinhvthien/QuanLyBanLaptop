@@ -163,13 +163,14 @@ namespace _1.DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Ma = table.Column<string>(type: "varchar(50)", nullable: false),
                     IDMauSac = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IDLaptop = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IDNsx = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Mota = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     SoLuong = table.Column<int>(type: "int", nullable: false),
                     GiaNhap = table.Column<decimal>(type: "money", nullable: false),
-                    GiaBan = table.Column<decimal>(type: "money", nullable: false),
-                    IDLaptop = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IDNsx = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    GiaBan = table.Column<decimal>(type: "money", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -255,6 +256,8 @@ namespace _1.DAL.Migrations
                 name: "HoaDonChiTiet",
                 columns: table => new
                 {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Ma = table.Column<string>(type: "varchar(30)", nullable: false),
                     IDHoaDon = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IDChiTietLapTop = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SoLuong = table.Column<int>(type: "int", nullable: false),
@@ -264,7 +267,7 @@ namespace _1.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HoaDonChiTiet", x => new { x.IDHoaDon, x.IDChiTietLapTop });
+                    table.PrimaryKey("PK_HoaDonChiTiet", x => x.ID);
                     table.ForeignKey(
                         name: "FK_HoaDonChiTiet_ChiTietLaptop_IDChiTietLapTop",
                         column: x => x.IDChiTietLapTop,
@@ -318,6 +321,11 @@ namespace _1.DAL.Migrations
                 name: "IX_HoaDonChiTiet_IDChiTietLapTop",
                 table: "HoaDonChiTiet",
                 column: "IDChiTietLapTop");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDonChiTiet_IDHoaDon",
+                table: "HoaDonChiTiet",
+                column: "IDHoaDon");
 
             migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_IdChucVu",

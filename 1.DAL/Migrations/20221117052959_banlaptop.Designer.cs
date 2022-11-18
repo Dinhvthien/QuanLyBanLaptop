@@ -12,7 +12,7 @@ using _1.DAL.Models;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(BanHangDbContext))]
-    [Migration("20221111072319_banlaptop")]
+    [Migration("20221117052959_banlaptop")]
     partial class banlaptop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,11 @@ namespace _1.DAL.Migrations
 
                     b.Property<Guid>("IDNsx")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Ma")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("Ma");
 
                     b.Property<string>("MoTa")
                         .IsRequired()
@@ -197,10 +202,8 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.HoaDonChiTiet", b =>
                 {
-                    b.Property<Guid>("IDHoaDon")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IDChiTietLapTop")
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaSauKhiGiam")
@@ -211,6 +214,17 @@ namespace _1.DAL.Migrations
                         .HasColumnType("money")
                         .HasColumnName("GiaTruoc");
 
+                    b.Property<Guid>("IDChiTietLapTop")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IDHoaDon")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Ma")
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("Ma");
+
                     b.Property<DateTime>("NgayTao")
                         .HasColumnType("datetime")
                         .HasColumnName("NgayTao");
@@ -219,9 +233,11 @@ namespace _1.DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("SoLuong");
 
-                    b.HasKey("IDHoaDon", "IDChiTietLapTop");
+                    b.HasKey("ID");
 
                     b.HasIndex("IDChiTietLapTop");
+
+                    b.HasIndex("IDHoaDon");
 
                     b.ToTable("HoaDonChiTiet", (string)null);
                 });

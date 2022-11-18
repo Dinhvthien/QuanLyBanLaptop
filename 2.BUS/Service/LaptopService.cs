@@ -44,15 +44,11 @@ namespace _2.BUS.Service
             List<LaptopView> listlt = new List<LaptopView>();
             listlt = (
                 from a in laptopRepositories.GetLaptop()
-                join e in thuocTinhRepositories.GetThuocTinh() on a.ID equals e.IDLaptop
-                join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
                 select new LaptopView
                 {
                     ID = a.ID,
                     Ma = a.Ma,
-                    Ten = a.Ten,
-                    TenThuocTinh = e.Ten,
-                    ThongSoGiaTri = f.ThongSo
+                    Ten = a.Ten
                 }
                 ).ToList();
             return listlt;

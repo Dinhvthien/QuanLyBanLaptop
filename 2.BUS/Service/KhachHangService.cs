@@ -39,7 +39,24 @@ namespace _2.BUS.Service
             else return "Thất bại";
         }
 
-        public List<KhachHangView> GetAllKhachHang()
+        public List<KhachHangView> FindKhachHang(string sdt)
+        {
+            List<KhachHangView> listkhv = new List<KhachHangView>();
+            listkhv = (
+                from a in khachHangRepositories.GetKhachHang().Where(a => a.SDT.Contains(sdt))
+                select new KhachHangView()
+                {
+                    ID = a.ID,
+                    Ma = a.Ma,
+                    HoTen = a.HoTen,
+                    DiaChi = a.DiaChi,
+                    SDT = a.SDT
+                }
+                ).ToList();
+            return listkhv;
+        }
+
+        public List<KhachHangView> GetKhachHang()
         {
             List<KhachHangView> listkhv = new List<KhachHangView>();
             listkhv = (

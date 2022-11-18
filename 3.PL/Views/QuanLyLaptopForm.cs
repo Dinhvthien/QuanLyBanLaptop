@@ -17,6 +17,7 @@ namespace _3.PL.Views
         Guid GetIdLaptop { get; set; }
         Guid GetIdThuocTinh { get; set; }
         Guid GetIdGiaTri { get; set; }
+        Guid GetIdChiTietLaptop { get; set; }
         public QuanLyLaptopForm()
         {
             InitializeComponent();
@@ -63,18 +64,16 @@ namespace _3.PL.Views
         {
             int sttlt = 0;
             dtg_showlaptop.Rows.Clear();
-            dtg_showlaptop.ColumnCount = 6;
+            dtg_showlaptop.ColumnCount = 4;
             dtg_showlaptop.Columns[0].Name = "ID";
             dtg_showlaptop.Columns[0].Visible = false;
             dtg_showlaptop.Columns[1].Name = "STT";
             dtg_showlaptop.Columns[2].Name = "Mã";
             dtg_showlaptop.Columns[3].Name = "Tên";
-            dtg_showlaptop.Columns[4].Name = "Tên thuộc tính";
-            dtg_showlaptop.Columns[5].Name = "Thông số giá trị";
             foreach (var g in listlt)
             {
                 sttlt++;
-                dtg_showlaptop.Rows.Add(g.ID, sttlt, g.Ma, g.Ten,g.TenThuocTinh,g.ThongSoGiaTri);
+                dtg_showlaptop.Rows.Add(g.ID, sttlt, g.Ma, g.Ten);
             }
         }
         void LoadDataThuocTinh(List<ThuocTinhView> listtt)
@@ -115,24 +114,34 @@ namespace _3.PL.Views
         {
             int sttctlt = 0;
             dtg_showchitietlaptop.Rows.Clear();
-            dtg_showchitietlaptop.ColumnCount = 12;
+            dtg_showchitietlaptop.ColumnCount = 13;
             dtg_showchitietlaptop.Columns[0].Name = "ID";
             dtg_showchitietlaptop.Columns[0].Visible = false;
             dtg_showchitietlaptop.Columns[1].Name = "STT";
-            dtg_showchitietlaptop.Columns[2].Name = "Mã Laptop ";
-            dtg_showchitietlaptop.Columns[3].Name = "TenLaptop";
-            dtg_showchitietlaptop.Columns[4].Name = "Tên thuộc tính";
-            dtg_showchitietlaptop.Columns[5].Name = "Thông số giá trị";
-            dtg_showchitietlaptop.Columns[6].Name = "Mã nhà sản xuất";
-            dtg_showchitietlaptop.Columns[7].Name = "Mã màu sắc";
-            dtg_showchitietlaptop.Columns[8].Name = "Mô tả";
-            dtg_showchitietlaptop.Columns[9].Name = "Số lượng";
-            dtg_showchitietlaptop.Columns[10].Name = "Giá nhập";
-            dtg_showchitietlaptop.Columns[11].Name = "Giá bán";
+            dtg_showchitietlaptop.Columns[2].Name = "Mã";
+            dtg_showchitietlaptop.Columns[3].Name = "Mã Laptop ";
+            dtg_showchitietlaptop.Columns[4].Name = "TenLaptop";
+            dtg_showchitietlaptop.Columns[5].Name = "Tên thuộc tính";
+            dtg_showchitietlaptop.Columns[6].Name = "Thông số giá trị";
+            dtg_showchitietlaptop.Columns[7].Name = "Mã nhà sản xuất";
+            dtg_showchitietlaptop.Columns[8].Name = "Mã màu sắc";
+            dtg_showchitietlaptop.Columns[9].Name = "Mô tả";
+            dtg_showchitietlaptop.Columns[10].Name = "Số lượng";
+            dtg_showchitietlaptop.Columns[11].Name = "Giá nhập";
+            dtg_showchitietlaptop.Columns[12].Name = "Giá bán";
+            dtg_showchitietlaptop.Columns[2].Visible = false;
+            dtg_showchitietlaptop.Columns[3].Visible = false;
+            dtg_showchitietlaptop.Columns[4].Visible = false;
+            dtg_showchitietlaptop.Columns[7].Visible = false;
+            dtg_showchitietlaptop.Columns[8].Visible = false;
+            dtg_showchitietlaptop.Columns[9].Visible = false;
+            dtg_showchitietlaptop.Columns[10].Visible = false;
+            dtg_showchitietlaptop.Columns[11].Visible = false;
+            dtg_showchitietlaptop.Columns[12].Visible = false;
             foreach (var s in list)
             {
                 sttctlt++;
-                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban);
+                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.Ma, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban);
             }
         }
         void LoadCombobox()
@@ -386,6 +395,7 @@ namespace _3.PL.Views
         {
             ChiTietLaptopView thao = new ChiTietLaptopView();
             thao.ID = Guid.NewGuid();
+            thao.Ma = tbx_machitietlaptop.Text;
             thao.IDLaptop = laptopService.GetLaptop().FirstOrDefault(a => a.Ma == cbb_malaptopctlt.Text).ID;
             thao.IDMauSac = mauSacService.GetMauSac().FirstOrDefault(a => a.Ma == cbb_mams.Text).ID;
             thao.IDNsx = nsxService.GetNsx().FirstOrDefault(a => a.Ma == cbb_mansx.Text).ID;
@@ -399,12 +409,35 @@ namespace _3.PL.Views
 
         private void btn_suactlt_Click(object sender, EventArgs e)
         {
-
+            ChiTietLaptopView thao = new ChiTietLaptopView();
+            thao.ID = GetIdChiTietLaptop;
+            thao.MoTa = tbx_mota.Text;
+            thao.SoLuong = Convert.ToInt32(nud_soluong.Value);
+            thao.GiaNhap = Convert.ToDecimal(tbx_ctltgianhap.Text);
+            thao.Giaban = Convert.ToDecimal(tbx_ctltgiaban.Text);
+            MessageBox.Show(chiTietLaptopService.Update(thao));
+            LoadDataChiTietLaptop(chiTietLaptopService.GetChiTietLaptop());
         }
 
         private void btn_xoactlt_Click(object sender, EventArgs e)
         {
+            ChiTietLaptopView thao = new ChiTietLaptopView();
+            thao.ID = GetIdChiTietLaptop;
+            MessageBox.Show(chiTietLaptopService.Delete(thao));
+            LoadDataChiTietLaptop(chiTietLaptopService.GetChiTietLaptop());
+        }
 
+        private void dtg_showchitietlaptop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetIdChiTietLaptop = Guid.Parse(dtg_showchitietlaptop.CurrentRow.Cells[0].Value.ToString());
+            tbx_machitietlaptop.Text = dtg_showchitietlaptop.CurrentRow.Cells[2].Value.ToString();
+            cbb_malaptopctlt.Text = dtg_showchitietlaptop.CurrentRow.Cells[3].Value.ToString();
+            cbb_mansx.Text = dtg_showchitietlaptop.CurrentRow.Cells[7].Value.ToString();
+            cbb_mams.Text = dtg_showchitietlaptop.CurrentRow.Cells[8].Value.ToString();
+            tbx_mota.Text = dtg_showchitietlaptop.CurrentRow.Cells[9].Value.ToString();
+            nud_soluong.Value = Convert.ToDecimal(dtg_showchitietlaptop.CurrentRow.Cells[10].Value.ToString());
+            tbx_ctltgianhap.Text = dtg_showchitietlaptop.CurrentRow.Cells[11].Value.ToString();
+            tbx_ctltgiaban.Text = dtg_showchitietlaptop.CurrentRow.Cells[12].Value.ToString();
         }
     }
 }
