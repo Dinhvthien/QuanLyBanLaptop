@@ -283,7 +283,7 @@ namespace _3.PL.Views
             v.StartDay = Convert.ToDateTime(dtp_ngaybdvc.Value.ToString("yyyy/MM/dd"));
             v.EndDay = Convert.ToDateTime(dtp_ngayktvc.Value.ToString("yyyy/MM/dd"));
             v.GiaTri = Convert.ToDecimal(tbx_giatrivoucher.Text);
-            v.SoLuong = Convert.ToInt32(nud_soluongvoucher.Value);
+            v.SoLuong = Convert.ToInt32(tbx_soluongvoucher.Text);
             if (voucherService.CheckMa(tbx_mavoucher.Text))
             {
                 MessageBox.Show("Voucher đã tồn tại", "Warrning !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -303,7 +303,7 @@ namespace _3.PL.Views
             v.StartDay = Convert.ToDateTime(dtp_ngaybdvc.Value.ToString("yyyy/MM/dd"));
             v.EndDay = Convert.ToDateTime(dtp_ngayktvc.Value.ToString("yyyy/MM/dd"));
             v.GiaTri = Convert.ToDecimal(tbx_giatrivoucher.Text);
-            v.SoLuong = Convert.ToInt32(nud_soluongvoucher.Value);
+            v.SoLuong = Convert.ToInt32(tbx_soluongvoucher.Text);
             MessageBox.Show(voucherService.Update(v));
             LoadDataVoucher(voucherService.GetVoucher());
         }
@@ -324,10 +324,28 @@ namespace _3.PL.Views
             dtp_ngaybdvc.Value = Convert.ToDateTime(dtg_showvoucher.CurrentRow.Cells[4].Value.ToString());
             dtp_ngayktvc.Value = Convert.ToDateTime(dtg_showvoucher.CurrentRow.Cells[5].Value.ToString());
             tbx_giatrivoucher.Text = dtg_showvoucher.CurrentRow.Cells[6].Value.ToString();
-            nud_soluongvoucher.Value = Convert.ToDecimal(dtg_showvoucher.CurrentRow.Cells[7].Value.ToString());
+            tbx_soluongvoucher.Text = Convert.ToString(dtg_showvoucher.CurrentRow.Cells[7].Value.ToString());
         }
 
         private void tbx_giatrivoucher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void tbx_soluongvoucher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void tbx_sdtnhanvien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void tbx_sdtcuahang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;

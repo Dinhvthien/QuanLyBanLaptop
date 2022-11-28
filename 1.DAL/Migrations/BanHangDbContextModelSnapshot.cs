@@ -182,9 +182,8 @@ namespace _1.DAL.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("TenNguoiNhan");
 
-                    b.Property<string>("TinhTrang")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
+                    b.Property<int>("TinhTrang")
+                        .HasColumnType("int")
                         .HasColumnName("TinhTrang");
 
                     b.HasKey("ID");
@@ -231,6 +230,10 @@ namespace _1.DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("SoLuong");
 
+                    b.Property<int>("TinhTrang")
+                        .HasColumnType("int")
+                        .HasColumnName("TinhTrang");
+
                     b.HasKey("ID");
 
                     b.HasIndex("IDChiTietLapTop");
@@ -238,6 +241,48 @@ namespace _1.DAL.Migrations
                     b.HasIndex("IDHoaDon");
 
                     b.ToTable("HoaDonChiTiet", (string)null);
+                });
+
+            modelBuilder.Entity("_1.DAL.Models.Imei", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IDChiTietLaptop")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SoEmei")
+                        .IsRequired()
+                        .HasColumnType("varchar(70)")
+                        .HasColumnName("SoImei");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("IDChiTietLaptop");
+
+                    b.ToTable("Imei", (string)null);
+                });
+
+            modelBuilder.Entity("_1.DAL.Models.ImeiDaBan", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IDHoaDonChiTiet")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SoEmei")
+                        .IsRequired()
+                        .HasColumnType("varchar(70)")
+                        .HasColumnName("SoImei");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("IDHoaDonChiTiet");
+
+                    b.ToTable("ImeiDaBan", (string)null);
                 });
 
             modelBuilder.Entity("_1.DAL.Models.KhachHang", b =>
@@ -255,11 +300,6 @@ namespace _1.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("HoTen");
-
-                    b.Property<string>("Ma")
-                        .IsRequired()
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("Ma");
 
                     b.Property<string>("SDT")
                         .IsRequired()
@@ -530,6 +570,28 @@ namespace _1.DAL.Migrations
                     b.Navigation("ChiTietLaptop");
 
                     b.Navigation("HoaDon");
+                });
+
+            modelBuilder.Entity("_1.DAL.Models.Imei", b =>
+                {
+                    b.HasOne("_1.DAL.Models.ChiTietLaptop", "ChiTietLaptop")
+                        .WithMany()
+                        .HasForeignKey("IDChiTietLaptop")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChiTietLaptop");
+                });
+
+            modelBuilder.Entity("_1.DAL.Models.ImeiDaBan", b =>
+                {
+                    b.HasOne("_1.DAL.Models.HoaDonChiTiet", "HoaDonChiTiet")
+                        .WithMany()
+                        .HasForeignKey("IDHoaDonChiTiet")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HoaDonChiTiet");
                 });
 
             modelBuilder.Entity("_1.DAL.Models.NhanVien", b =>

@@ -174,11 +174,21 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "AForge.Video.DirectShow": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[2.2.5, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.14.0.1, )"
             }
           },
           "imports": [

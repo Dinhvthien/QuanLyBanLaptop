@@ -9,5 +9,6 @@ namespace _2.BUS.IService
         string Delete(ChiTietLaptopView ctltview);
         //bool CheckMa(string ma);
         List<ChiTietLaptopView> GetChiTietLaptop();
+        List<ChiTietLaptopView> GetChiTietLaptopNoJoin();
     }
 }

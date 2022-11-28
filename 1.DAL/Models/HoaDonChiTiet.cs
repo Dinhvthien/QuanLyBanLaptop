@@ -10,6 +10,7 @@
         public decimal GiaTruoc { get; set; }
         public DateTime NgayTao { get; set; }
         public decimal GiaSauKhiGiam { get; set; }
+        public int TinhTrang { get; set; }
         public virtual HoaDon HoaDon { get; set; }
         public virtual ChiTietLaptop ChiTietLaptop { get; set; }
     }

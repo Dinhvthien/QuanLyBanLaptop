@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace _1.DAL.Migrations
 {
-    public partial class banlaptop : Migration
+    public partial class laptop : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,10 +42,9 @@ namespace _1.DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Ma = table.Column<string>(type: "varchar(30)", nullable: false),
+                    SDT = table.Column<string>(type: "varchar(15)", nullable: false),
                     HoTen = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    DiaChi = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    SDT = table.Column<string>(type: "varchar(15)", nullable: false)
+                    DiaChi = table.Column<string>(type: "nvarchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -203,7 +203,7 @@ namespace _1.DAL.Migrations
                     Ma = table.Column<string>(type: "varchar(30)", nullable: false),
                     NgayTao = table.Column<DateTime>(type: "datetime", nullable: false),
                     TenNguoiNhan = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    TinhTrang = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    TinhTrang = table.Column<int>(type: "int", nullable: false),
                     IdNhanVien = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdKhachHang = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SdtNguoiNhan = table.Column<string>(type: "varchar(20)", nullable: false),
@@ -253,6 +253,25 @@ namespace _1.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Imei",
+                columns: table => new
+                {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IDChiTietLaptop = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SoImei = table.Column<string>(type: "varchar(70)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Imei", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Imei_ChiTietLaptop_IDChiTietLaptop",
+                        column: x => x.IDChiTietLaptop,
+                        principalTable: "ChiTietLaptop",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "HoaDonChiTiet",
                 columns: table => new
                 {
@@ -263,7 +282,8 @@ namespace _1.DAL.Migrations
                     SoLuong = table.Column<int>(type: "int", nullable: false),
                     GiaTruoc = table.Column<decimal>(type: "money", nullable: false),
                     NgayTao = table.Column<DateTime>(type: "datetime", nullable: false),
-                    GiaSauKhiGiam = table.Column<decimal>(type: "money", nullable: false)
+                    GiaSauKhiGiam = table.Column<decimal>(type: "money", nullable: false),
+                    TinhTrang = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -278,6 +298,25 @@ namespace _1.DAL.Migrations
                         name: "FK_HoaDonChiTiet_HoaDon_IDHoaDon",
                         column: x => x.IDHoaDon,
                         principalTable: "HoaDon",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ImeiDaBan",
+                columns: table => new
+                {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IDHoaDonChiTiet = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SoImei = table.Column<string>(type: "varchar(70)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImeiDaBan", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_ImeiDaBan_HoaDonChiTiet_IDHoaDonChiTiet",
+                        column: x => x.IDHoaDonChiTiet,
+                        principalTable: "HoaDonChiTiet",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -328,6 +367,16 @@ namespace _1.DAL.Migrations
                 column: "IDHoaDon");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Imei_IDChiTietLaptop",
+                table: "Imei",
+                column: "IDChiTietLaptop");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ImeiDaBan_IDHoaDonChiTiet",
+                table: "ImeiDaBan",
+                column: "IDHoaDonChiTiet");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_IdChucVu",
                 table: "NhanVien",
                 column: "IdChucVu");
@@ -349,10 +398,16 @@ namespace _1.DAL.Migrations
                 name: "GiaTri");
 
             migrationBuilder.DropTable(
-                name: "HoaDonChiTiet");
+                name: "Imei");
+
+            migrationBuilder.DropTable(
+                name: "ImeiDaBan");
 
             migrationBuilder.DropTable(
                 name: "ThuocTinh");
+
+            migrationBuilder.DropTable(
+                name: "HoaDonChiTiet");
 
             migrationBuilder.DropTable(
                 name: "ChiTietLaptop");

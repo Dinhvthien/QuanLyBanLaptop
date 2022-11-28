@@ -1,4 +1,5 @@
-﻿using _2.BUS.ViewModels;
+﻿using _1.DAL.Models;
+using _2.BUS.ViewModels;
 
 namespace _2.BUS.IService
 {
@@ -8,6 +9,8 @@ namespace _2.BUS.IService
         string Update(HoaDonChiTietView hdctview);
         string Delete(HoaDonChiTietView hdctview);
         //bool CheckMa(string ma);
+        string UpdateTrangThai(HoaDonChiTietView hdctview);
         List<HoaDonChiTietView> GetHoaDonChiTiet();
+        public List<HoaDonChiTietView> GetHoaDonChiTietNoJoin();
     }
 }

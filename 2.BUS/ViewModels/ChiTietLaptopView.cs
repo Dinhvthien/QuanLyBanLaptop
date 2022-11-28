@@ -20,8 +20,11 @@ namespace _2.BUS.ViewModels
         public string MaMauSac { get; set; }
         public string MaNsx { get; set; }
         public string TenLaptop { get; set; }
+        public string TenNsx { get; set; }
+        public string TenMauSac { get; set; }
         public string TenThuocTinh { get; set; }
         public string ThongSoGiaTri { get; set; }
+        public string SoImei { get; set; }
 
     }
 }

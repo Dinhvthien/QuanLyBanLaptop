@@ -14,7 +14,8 @@ namespace _2.BUS.Service
         INsxRepositories nsxRepositories = new NsxRepositories();
         IThuocTinhRepositories thuocTinhRepositories = new ThuocTinhRepositories();
         IGiaTriRepositories giaTriRepositories = new GiaTriRepositories();
-        ILaptopService laptopService = new LaptopService();
+        IImeiRepositories imeiRepositories = new ImeiRepositories();
+        //   ILaptopService laptopService = new LaptopService();
         public string Add(ChiTietLaptopView ctltview)
         {
             if (ctltview == null) return "Thất bại";
@@ -45,12 +46,12 @@ namespace _2.BUS.Service
             List<ChiTietLaptopView> listview = new List<ChiTietLaptopView>();
             listview = (
                          from a in chiTietLaptopRepositories.GetChiTietLaptop()
-                             //     join b in laptopService.GetLaptop() on a.IDLaptop equals b.ID
                          join c in mauSacRepositories.GetMauSac() on a.IDMauSac equals c.ID
                          join d in nsxRepositories.GetNsx() on a.IDNsx equals d.ID
                          join g in laptopRepositories.GetLaptop() on a.IDLaptop equals g.ID
                          join e in thuocTinhRepositories.GetThuocTinh() on g.ID equals e.IDLaptop
                          join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
+                         join h in imeiRepositories.GetImei() on a.ID equals h.IDChiTietLaptop
                          select new ChiTietLaptopView
                          {
                              ID = a.ID,
@@ -64,8 +65,10 @@ namespace _2.BUS.Service
                              MaLaptop = g.Ma,
                              TenLaptop = g.Ten,
                              TenThuocTinh = e.Ten,
-                             ThongSoGiaTri = f.ThongSo
-
+                             ThongSoGiaTri = f.ThongSo,
+                             TenMauSac = c.Ten,
+                             TenNsx = d.Ten,
+                             SoImei = h.SoEmei
                          }
 
                 ).ToList();
@@ -83,6 +86,39 @@ namespace _2.BUS.Service
             t.Giaban = ctltview.Giaban;
             if (chiTietLaptopRepositories.Update(t)) return "Thành công";
             else return "Thất bại";
+        }
+        public List<ChiTietLaptopView> GetChiTietLaptopNoJoin()
+        {
+            List<ChiTietLaptopView> listview = new List<ChiTietLaptopView>();
+            listview = (
+                         from a in chiTietLaptopRepositories.GetChiTietLaptop()
+                         join c in mauSacRepositories.GetMauSac() on a.IDMauSac equals c.ID
+                         join d in nsxRepositories.GetNsx() on a.IDNsx equals d.ID
+                         join g in laptopRepositories.GetLaptop() on a.IDLaptop equals g.ID
+                         join e in thuocTinhRepositories.GetThuocTinh() on g.ID equals e.IDLaptop
+                         join f in giaTriRepositories.GetGiaTri() on e.ID equals f.IDThuocTinh
+                         //  join h in imeiRepositories.GetImei() on a.ID equals h.IDChiTietLaptop
+                         select new ChiTietLaptopView
+                         {
+                             ID = a.ID,
+                             Ma = a.Ma,
+                             MoTa = a.MoTa,
+                             SoLuong = a.SoLuong,
+                             GiaNhap = a.GiaNhap,
+                             Giaban = a.Giaban,
+                             MaMauSac = c.Ma,
+                             MaNsx = d.Ma,
+                             MaLaptop = g.Ma,
+                             TenLaptop = g.Ten,
+                             TenThuocTinh = e.Ten,
+                             ThongSoGiaTri = f.ThongSo,
+                             TenMauSac = c.Ten,
+                             TenNsx = d.Ten,
+                             //     SoImei = h.SoEmei
+                         }
+
+                ).ToList();
+            return listview;
         }
     }
 }

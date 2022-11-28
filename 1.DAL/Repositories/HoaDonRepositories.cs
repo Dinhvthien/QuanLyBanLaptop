@@ -32,7 +32,6 @@ namespace _1.DAL.Repositories
         {
             if (hd == null) return false;
             var t = context.HoaDons.Find(hd.ID);
-            t.NgayTao = hd.NgayTao;
             t.TenNguoiNhan = hd.TenNguoiNhan;
             t.TinhTrang = hd.TinhTrang;
             t.SdtNguoiNhan = hd.SdtNguoiNhan;

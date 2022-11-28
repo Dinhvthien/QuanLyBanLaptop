@@ -12,6 +12,7 @@ namespace _3.PL.Views
         IThuocTinhService thuocTinhService;
         IGiaTriService giaTriService;
         IChiTietLaptopService chiTietLaptopService;
+        IImeiService imeiService;
         Guid GetIdMauSac { get; set; }
         Guid GetIdNsx { get; set; }
         Guid GetIdLaptop { get; set; }
@@ -27,6 +28,7 @@ namespace _3.PL.Views
             thuocTinhService = new ThuocTinhService();
             giaTriService = new GiaTriService();
             chiTietLaptopService = new ChiTietLaptopService();
+            imeiService= new ImeiService();
         }
         void LoadDataMauSac(List<MauSacView> listms)
         {
@@ -114,7 +116,7 @@ namespace _3.PL.Views
         {
             int sttctlt = 0;
             dtg_showchitietlaptop.Rows.Clear();
-            dtg_showchitietlaptop.ColumnCount = 13;
+            dtg_showchitietlaptop.ColumnCount = 14;
             dtg_showchitietlaptop.Columns[0].Name = "ID";
             dtg_showchitietlaptop.Columns[0].Visible = false;
             dtg_showchitietlaptop.Columns[1].Name = "STT";
@@ -129,6 +131,7 @@ namespace _3.PL.Views
             dtg_showchitietlaptop.Columns[10].Name = "Số lượng";
             dtg_showchitietlaptop.Columns[11].Name = "Giá nhập";
             dtg_showchitietlaptop.Columns[12].Name = "Giá bán";
+            dtg_showchitietlaptop.Columns[13].Name = "Số Imei";
             dtg_showchitietlaptop.Columns[2].Visible = false;
             dtg_showchitietlaptop.Columns[3].Visible = false;
             dtg_showchitietlaptop.Columns[4].Visible = false;
@@ -141,7 +144,7 @@ namespace _3.PL.Views
             foreach (var s in list)
             {
                 sttctlt++;
-                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.Ma, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban);
+                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.Ma, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban,s.SoImei);
             }
         }
         void LoadCombobox()
@@ -400,7 +403,7 @@ namespace _3.PL.Views
             thao.IDMauSac = mauSacService.GetMauSac().FirstOrDefault(a => a.Ma == cbb_mams.Text).ID;
             thao.IDNsx = nsxService.GetNsx().FirstOrDefault(a => a.Ma == cbb_mansx.Text).ID;
             thao.MoTa = tbx_mota.Text;
-            thao.SoLuong = Convert.ToInt32(nud_soluong.Value);
+            thao.SoLuong = Convert.ToInt32(tbx_soluongctlt.Text);
             thao.GiaNhap = Convert.ToDecimal(tbx_ctltgianhap.Text);
             thao.Giaban = Convert.ToDecimal(tbx_ctltgiaban.Text);
             MessageBox.Show(chiTietLaptopService.Add(thao));
@@ -412,7 +415,7 @@ namespace _3.PL.Views
             ChiTietLaptopView thao = new ChiTietLaptopView();
             thao.ID = GetIdChiTietLaptop;
             thao.MoTa = tbx_mota.Text;
-            thao.SoLuong = Convert.ToInt32(nud_soluong.Value);
+            thao.SoLuong = Convert.ToInt32(tbx_soluongctlt.Text);
             thao.GiaNhap = Convert.ToDecimal(tbx_ctltgianhap.Text);
             thao.Giaban = Convert.ToDecimal(tbx_ctltgiaban.Text);
             MessageBox.Show(chiTietLaptopService.Update(thao));
@@ -435,9 +438,36 @@ namespace _3.PL.Views
             cbb_mansx.Text = dtg_showchitietlaptop.CurrentRow.Cells[7].Value.ToString();
             cbb_mams.Text = dtg_showchitietlaptop.CurrentRow.Cells[8].Value.ToString();
             tbx_mota.Text = dtg_showchitietlaptop.CurrentRow.Cells[9].Value.ToString();
-            nud_soluong.Value = Convert.ToDecimal(dtg_showchitietlaptop.CurrentRow.Cells[10].Value.ToString());
+            tbx_soluongctlt.Text = Convert.ToString(dtg_showchitietlaptop.CurrentRow.Cells[10].Value.ToString());
             tbx_ctltgianhap.Text = dtg_showchitietlaptop.CurrentRow.Cells[11].Value.ToString();
             tbx_ctltgiaban.Text = dtg_showchitietlaptop.CurrentRow.Cells[12].Value.ToString();
+        }
+
+        private void tbx_ctltgianhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void tbx_ctltgiaban_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void tbx_soluongctlt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void btn_themimei_Click(object sender, EventArgs e)
+        {
+            ImeiView th = new ImeiView();
+            th.ID = Guid.NewGuid();
+            th.SoEmei = tbx_soimei.Text;
+            th.IDChiTietLaptop = chiTietLaptopService.GetChiTietLaptopNoJoin().FirstOrDefault(a => a.Ma == tbx_imei_mactlt.Text).ID;
+            MessageBox.Show(imeiService.Add(th));
         }
     }
 }

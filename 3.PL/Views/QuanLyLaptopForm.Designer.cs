@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tp_chitietlaptop = new System.Windows.Forms.TabPage();
+            this.tbx_soluongctlt = new System.Windows.Forms.TextBox();
             this.tbx_machitietlaptop = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbx_ctltgiaban = new System.Windows.Forms.TextBox();
             this.tbx_ctltgianhap = new System.Windows.Forms.TextBox();
-            this.nud_soluong = new System.Windows.Forms.NumericUpDown();
             this.dtg_showchitietlaptop = new System.Windows.Forms.DataGridView();
             this.cbb_mams = new System.Windows.Forms.ComboBox();
             this.cbb_malaptopctlt = new System.Windows.Forms.ComboBox();
@@ -94,18 +94,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_themnsx = new System.Windows.Forms.Button();
             this.tp_mausac = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dtg_showmausac = new System.Windows.Forms.DataGridView();
             this.btn_suams = new System.Windows.Forms.Button();
             this.btn_xoams = new System.Windows.Forms.Button();
+            this.btn_themms = new System.Windows.Forms.Button();
             this.tbx_mams = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbx_tenms = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_themms = new System.Windows.Forms.Button();
             this.tabctrl_quanlylaptop = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_themimei = new System.Windows.Forms.Button();
+            this.tbx_imei_mactlt = new System.Windows.Forms.TextBox();
+            this.tbx_soimei = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.tp_chitietlaptop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_soluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showchitietlaptop)).BeginInit();
             this.tp_laptop.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -120,19 +124,19 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_shownsx)).BeginInit();
             this.tp_mausac.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showmausac)).BeginInit();
             this.tabctrl_quanlylaptop.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tp_chitietlaptop
             // 
-            this.tp_chitietlaptop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tp_chitietlaptop.BackColor = System.Drawing.Color.White;
+            this.tp_chitietlaptop.Controls.Add(this.tbx_soluongctlt);
             this.tp_chitietlaptop.Controls.Add(this.tbx_machitietlaptop);
             this.tp_chitietlaptop.Controls.Add(this.label18);
             this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgiaban);
             this.tp_chitietlaptop.Controls.Add(this.tbx_ctltgianhap);
-            this.tp_chitietlaptop.Controls.Add(this.nud_soluong);
             this.tp_chitietlaptop.Controls.Add(this.dtg_showchitietlaptop);
             this.tp_chitietlaptop.Controls.Add(this.cbb_mams);
             this.tp_chitietlaptop.Controls.Add(this.cbb_malaptopctlt);
@@ -151,9 +155,17 @@
             this.tp_chitietlaptop.Location = new System.Drawing.Point(4, 33);
             this.tp_chitietlaptop.Name = "tp_chitietlaptop";
             this.tp_chitietlaptop.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_chitietlaptop.Size = new System.Drawing.Size(652, 382);
+            this.tp_chitietlaptop.Size = new System.Drawing.Size(725, 429);
             this.tp_chitietlaptop.TabIndex = 6;
             this.tp_chitietlaptop.Text = "Chi Tiết Laptop";
+            // 
+            // tbx_soluongctlt
+            // 
+            this.tbx_soluongctlt.Location = new System.Drawing.Point(130, 194);
+            this.tbx_soluongctlt.Name = "tbx_soluongctlt";
+            this.tbx_soluongctlt.Size = new System.Drawing.Size(48, 29);
+            this.tbx_soluongctlt.TabIndex = 36;
+            this.tbx_soluongctlt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_soluongctlt_KeyPress);
             // 
             // tbx_machitietlaptop
             // 
@@ -177,6 +189,7 @@
             this.tbx_ctltgiaban.Name = "tbx_ctltgiaban";
             this.tbx_ctltgiaban.Size = new System.Drawing.Size(136, 29);
             this.tbx_ctltgiaban.TabIndex = 33;
+            this.tbx_ctltgiaban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_ctltgiaban_KeyPress);
             // 
             // tbx_ctltgianhap
             // 
@@ -184,13 +197,7 @@
             this.tbx_ctltgianhap.Name = "tbx_ctltgianhap";
             this.tbx_ctltgianhap.Size = new System.Drawing.Size(136, 29);
             this.tbx_ctltgianhap.TabIndex = 32;
-            // 
-            // nud_soluong
-            // 
-            this.nud_soluong.Location = new System.Drawing.Point(130, 192);
-            this.nud_soluong.Name = "nud_soluong";
-            this.nud_soluong.Size = new System.Drawing.Size(45, 29);
-            this.nud_soluong.TabIndex = 31;
+            this.tbx_ctltgianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_ctltgianhap_KeyPress);
             // 
             // dtg_showchitietlaptop
             // 
@@ -200,7 +207,7 @@
             this.dtg_showchitietlaptop.Name = "dtg_showchitietlaptop";
             this.dtg_showchitietlaptop.ReadOnly = true;
             this.dtg_showchitietlaptop.RowTemplate.Height = 25;
-            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(376, 374);
+            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(317, 374);
             this.dtg_showchitietlaptop.TabIndex = 30;
             this.dtg_showchitietlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showchitietlaptop_CellClick);
             // 
@@ -256,7 +263,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(37, 134);
+            this.label17.Location = new System.Drawing.Point(27, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(97, 21);
             this.label17.TabIndex = 16;
@@ -333,18 +340,18 @@
             // 
             // tp_laptop
             // 
+            this.tp_laptop.BackColor = System.Drawing.Color.White;
             this.tp_laptop.Controls.Add(this.panel6);
             this.tp_laptop.Location = new System.Drawing.Point(4, 33);
             this.tp_laptop.Name = "tp_laptop";
             this.tp_laptop.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_laptop.Size = new System.Drawing.Size(652, 382);
+            this.tp_laptop.Size = new System.Drawing.Size(725, 429);
             this.tp_laptop.TabIndex = 5;
             this.tp_laptop.Text = "Laptop";
-            this.tp_laptop.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.dtg_showlaptop);
             this.panel6.Controls.Add(this.btn_sualt);
             this.panel6.Controls.Add(this.btn_xoalt);
@@ -355,7 +362,7 @@
             this.panel6.Controls.Add(this.btn_themlt);
             this.panel6.Location = new System.Drawing.Point(27, 6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(829, 361);
+            this.panel6.Size = new System.Drawing.Size(650, 361);
             this.panel6.TabIndex = 2;
             // 
             // dtg_showlaptop
@@ -436,18 +443,18 @@
             // 
             // tp_thuoctinh
             // 
+            this.tp_thuoctinh.BackColor = System.Drawing.Color.White;
             this.tp_thuoctinh.Controls.Add(this.panel5);
             this.tp_thuoctinh.Location = new System.Drawing.Point(4, 33);
             this.tp_thuoctinh.Name = "tp_thuoctinh";
             this.tp_thuoctinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_thuoctinh.Size = new System.Drawing.Size(652, 382);
+            this.tp_thuoctinh.Size = new System.Drawing.Size(725, 429);
             this.tp_thuoctinh.TabIndex = 4;
             this.tp_thuoctinh.Text = "Thuộc tính";
-            this.tp_thuoctinh.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.cbb_idlaptoptt);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.dtg_showthuoctinh);
@@ -460,7 +467,7 @@
             this.panel5.Controls.Add(this.btn_themthuoctinh);
             this.panel5.Location = new System.Drawing.Point(27, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(829, 361);
+            this.panel5.Size = new System.Drawing.Size(690, 361);
             this.panel5.TabIndex = 2;
             // 
             // cbb_idlaptoptt
@@ -484,10 +491,10 @@
             // 
             this.dtg_showthuoctinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showthuoctinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showthuoctinh.Location = new System.Drawing.Point(356, 16);
+            this.dtg_showthuoctinh.Location = new System.Drawing.Point(297, 16);
             this.dtg_showthuoctinh.Name = "dtg_showthuoctinh";
             this.dtg_showthuoctinh.RowTemplate.Height = 25;
-            this.dtg_showthuoctinh.Size = new System.Drawing.Size(263, 317);
+            this.dtg_showthuoctinh.Size = new System.Drawing.Size(342, 317);
             this.dtg_showthuoctinh.TabIndex = 7;
             this.dtg_showthuoctinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showthuoctinh_CellClick);
             // 
@@ -562,7 +569,7 @@
             this.tp_giatri.Location = new System.Drawing.Point(4, 33);
             this.tp_giatri.Name = "tp_giatri";
             this.tp_giatri.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_giatri.Size = new System.Drawing.Size(698, 381);
+            this.tp_giatri.Size = new System.Drawing.Size(725, 429);
             this.tp_giatri.TabIndex = 3;
             this.tp_giatri.Text = "Giá trị";
             this.tp_giatri.UseVisualStyleBackColor = true;
@@ -606,7 +613,7 @@
             // 
             this.dtg_showgiatri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showgiatri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showgiatri.Location = new System.Drawing.Point(3, 107);
+            this.dtg_showgiatri.Location = new System.Drawing.Point(19, 107);
             this.dtg_showgiatri.Name = "dtg_showgiatri";
             this.dtg_showgiatri.RowTemplate.Height = 25;
             this.dtg_showgiatri.Size = new System.Drawing.Size(423, 242);
@@ -680,18 +687,18 @@
             // 
             // tp_nsx
             // 
+            this.tp_nsx.BackColor = System.Drawing.Color.White;
             this.tp_nsx.Controls.Add(this.panel2);
             this.tp_nsx.Location = new System.Drawing.Point(4, 33);
             this.tp_nsx.Name = "tp_nsx";
             this.tp_nsx.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_nsx.Size = new System.Drawing.Size(652, 382);
+            this.tp_nsx.Size = new System.Drawing.Size(725, 429);
             this.tp_nsx.TabIndex = 1;
             this.tp_nsx.Text = "Nhà sản xuất";
-            this.tp_nsx.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dtg_shownsx);
             this.panel2.Controls.Add(this.btn_suansx);
             this.panel2.Controls.Add(this.btn_xoansx);
@@ -702,7 +709,7 @@
             this.panel2.Controls.Add(this.btn_themnsx);
             this.panel2.Location = new System.Drawing.Point(27, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(829, 361);
+            this.panel2.Size = new System.Drawing.Size(678, 361);
             this.panel2.TabIndex = 2;
             // 
             // dtg_shownsx
@@ -783,46 +790,37 @@
             // 
             // tp_mausac
             // 
-            this.tp_mausac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tp_mausac.Controls.Add(this.panel1);
+            this.tp_mausac.BackColor = System.Drawing.Color.White;
+            this.tp_mausac.Controls.Add(this.btn_suams);
+            this.tp_mausac.Controls.Add(this.dtg_showmausac);
+            this.tp_mausac.Controls.Add(this.btn_xoams);
+            this.tp_mausac.Controls.Add(this.btn_themms);
+            this.tp_mausac.Controls.Add(this.tbx_mams);
+            this.tp_mausac.Controls.Add(this.label2);
+            this.tp_mausac.Controls.Add(this.tbx_tenms);
+            this.tp_mausac.Controls.Add(this.label3);
             this.tp_mausac.Location = new System.Drawing.Point(4, 33);
             this.tp_mausac.Name = "tp_mausac";
             this.tp_mausac.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_mausac.Size = new System.Drawing.Size(652, 382);
+            this.tp_mausac.Size = new System.Drawing.Size(725, 429);
             this.tp_mausac.TabIndex = 0;
             this.tp_mausac.Text = "Màu sắc";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.dtg_showmausac);
-            this.panel1.Controls.Add(this.btn_suams);
-            this.panel1.Controls.Add(this.btn_xoams);
-            this.panel1.Controls.Add(this.tbx_mams);
-            this.panel1.Controls.Add(this.tbx_tenms);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btn_themms);
-            this.panel1.Location = new System.Drawing.Point(20, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 364);
-            this.panel1.TabIndex = 1;
             // 
             // dtg_showmausac
             // 
             this.dtg_showmausac.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_showmausac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showmausac.Location = new System.Drawing.Point(176, 34);
+            this.dtg_showmausac.Location = new System.Drawing.Point(249, 133);
             this.dtg_showmausac.Name = "dtg_showmausac";
             this.dtg_showmausac.RowTemplate.Height = 25;
-            this.dtg_showmausac.Size = new System.Drawing.Size(379, 296);
+            this.dtg_showmausac.Size = new System.Drawing.Size(273, 254);
             this.dtg_showmausac.TabIndex = 7;
             this.dtg_showmausac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showmausac_CellClick);
             // 
             // btn_suams
             // 
             this.btn_suams.ForeColor = System.Drawing.Color.Red;
-            this.btn_suams.Location = new System.Drawing.Point(56, 182);
+            this.btn_suams.Location = new System.Drawing.Point(109, 177);
             this.btn_suams.Name = "btn_suams";
             this.btn_suams.Size = new System.Drawing.Size(75, 33);
             this.btn_suams.TabIndex = 6;
@@ -833,7 +831,7 @@
             // btn_xoams
             // 
             this.btn_xoams.ForeColor = System.Drawing.Color.Red;
-            this.btn_xoams.Location = new System.Drawing.Point(58, 242);
+            this.btn_xoams.Location = new System.Drawing.Point(111, 216);
             this.btn_xoams.Name = "btn_xoams";
             this.btn_xoams.Size = new System.Drawing.Size(73, 30);
             this.btn_xoams.TabIndex = 5;
@@ -841,16 +839,36 @@
             this.btn_xoams.UseVisualStyleBackColor = true;
             this.btn_xoams.Click += new System.EventHandler(this.btn_xoams_Click);
             // 
+            // btn_themms
+            // 
+            this.btn_themms.ForeColor = System.Drawing.Color.Red;
+            this.btn_themms.Location = new System.Drawing.Point(109, 142);
+            this.btn_themms.Name = "btn_themms";
+            this.btn_themms.Size = new System.Drawing.Size(75, 30);
+            this.btn_themms.TabIndex = 0;
+            this.btn_themms.Text = "Thêm";
+            this.btn_themms.UseVisualStyleBackColor = true;
+            this.btn_themms.Click += new System.EventHandler(this.btn_themms_Click);
+            // 
             // tbx_mams
             // 
-            this.tbx_mams.Location = new System.Drawing.Point(42, 31);
+            this.tbx_mams.Location = new System.Drawing.Point(269, 98);
             this.tbx_mams.Name = "tbx_mams";
             this.tbx_mams.Size = new System.Drawing.Size(100, 29);
             this.tbx_mams.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(230, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mã";
+            // 
             // tbx_tenms
             // 
-            this.tbx_tenms.Location = new System.Drawing.Point(45, 76);
+            this.tbx_tenms.Location = new System.Drawing.Point(421, 101);
             this.tbx_tenms.Name = "tbx_tenms";
             this.tbx_tenms.Size = new System.Drawing.Size(100, 29);
             this.tbx_tenms.TabIndex = 3;
@@ -858,31 +876,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 79);
+            this.label3.Location = new System.Drawing.Point(379, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mã";
-            // 
-            // btn_themms
-            // 
-            this.btn_themms.ForeColor = System.Drawing.Color.Red;
-            this.btn_themms.Location = new System.Drawing.Point(56, 136);
-            this.btn_themms.Name = "btn_themms";
-            this.btn_themms.Size = new System.Drawing.Size(75, 30);
-            this.btn_themms.TabIndex = 0;
-            this.btn_themms.Text = "Thêm";
-            this.btn_themms.UseVisualStyleBackColor = true;
-            this.btn_themms.Click += new System.EventHandler(this.btn_themms_Click);
             // 
             // tabctrl_quanlylaptop
             // 
@@ -893,13 +891,73 @@
             this.tabctrl_quanlylaptop.Controls.Add(this.tp_thuoctinh);
             this.tabctrl_quanlylaptop.Controls.Add(this.tp_laptop);
             this.tabctrl_quanlylaptop.Controls.Add(this.tp_chitietlaptop);
+            this.tabctrl_quanlylaptop.Controls.Add(this.tabPage1);
+            this.tabctrl_quanlylaptop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabctrl_quanlylaptop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.tabctrl_quanlylaptop.Location = new System.Drawing.Point(12, 32);
+            this.tabctrl_quanlylaptop.Location = new System.Drawing.Point(0, 0);
             this.tabctrl_quanlylaptop.Multiline = true;
             this.tabctrl_quanlylaptop.Name = "tabctrl_quanlylaptop";
             this.tabctrl_quanlylaptop.SelectedIndex = 0;
-            this.tabctrl_quanlylaptop.Size = new System.Drawing.Size(706, 418);
+            this.tabctrl_quanlylaptop.Size = new System.Drawing.Size(733, 466);
             this.tabctrl_quanlylaptop.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.btn_themimei);
+            this.tabPage1.Controls.Add(this.tbx_imei_mactlt);
+            this.tabPage1.Controls.Add(this.tbx_soimei);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(725, 429);
+            this.tabPage1.TabIndex = 7;
+            this.tabPage1.Text = "Imei";
+            // 
+            // btn_themimei
+            // 
+            this.btn_themimei.ForeColor = System.Drawing.Color.Red;
+            this.btn_themimei.Location = new System.Drawing.Point(226, 130);
+            this.btn_themimei.Name = "btn_themimei";
+            this.btn_themimei.Size = new System.Drawing.Size(75, 32);
+            this.btn_themimei.TabIndex = 9;
+            this.btn_themimei.Text = "Thêm";
+            this.btn_themimei.UseVisualStyleBackColor = true;
+            this.btn_themimei.Click += new System.EventHandler(this.btn_themimei_Click);
+            // 
+            // tbx_imei_mactlt
+            // 
+            this.tbx_imei_mactlt.Location = new System.Drawing.Point(184, 35);
+            this.tbx_imei_mactlt.Name = "tbx_imei_mactlt";
+            this.tbx_imei_mactlt.Size = new System.Drawing.Size(236, 29);
+            this.tbx_imei_mactlt.TabIndex = 8;
+            // 
+            // tbx_soimei
+            // 
+            this.tbx_soimei.Location = new System.Drawing.Point(184, 80);
+            this.tbx_soimei.Name = "tbx_soimei";
+            this.tbx_soimei.Size = new System.Drawing.Size(236, 29);
+            this.tbx_soimei.TabIndex = 7;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(22, 80);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 21);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Số Emei";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(22, 35);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(138, 21);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Mã chi tiết laptop";
             // 
             // QuanLyLaptopForm
             // 
@@ -914,7 +972,6 @@
             this.Load += new System.EventHandler(this.QuanLyLaptopForm_Load);
             this.tp_chitietlaptop.ResumeLayout(false);
             this.tp_chitietlaptop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_soluong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showchitietlaptop)).EndInit();
             this.tp_laptop.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -933,10 +990,11 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_shownsx)).EndInit();
             this.tp_mausac.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tp_mausac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showmausac)).EndInit();
             this.tabctrl_quanlylaptop.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -944,7 +1002,6 @@
         #endregion
 
         private TabPage tp_chitietlaptop;
-        private NumericUpDown nud_soluong;
         private DataGridView dtg_showchitietlaptop;
         private ComboBox cbb_mams;
         private ComboBox cbb_malaptopctlt;
@@ -1005,7 +1062,6 @@
         private Label label4;
         private Button btn_themnsx;
         private TabPage tp_mausac;
-        private Panel panel1;
         private DataGridView dtg_showmausac;
         private Button btn_suams;
         private Button btn_xoams;
@@ -1019,5 +1075,12 @@
         private TextBox tbx_ctltgianhap;
         private TextBox tbx_machitietlaptop;
         private Label label18;
+        private TextBox tbx_soluongctlt;
+        private TabPage tabPage1;
+        private TextBox tbx_imei_mactlt;
+        private TextBox tbx_soimei;
+        private Label label19;
+        private Label label20;
+        private Button btn_themimei;
     }
 }

@@ -34,7 +34,6 @@ namespace _1.DAL.Repositories
             var t = context.KhachHangs.FirstOrDefault(a => a.ID == kh.ID);
             t.HoTen = kh.HoTen;
             t.DiaChi = kh.DiaChi;
-            t.SDT = kh.SDT;
             context.Update(t);
             context.SaveChanges();
             return true;

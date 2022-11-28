@@ -62,12 +62,13 @@ namespace _2.BUS.Service
                     TenNguoiNhan = a.TenNguoiNhan,
                     TinhTrang = a.TinhTrang,
                     SdtNguoiNhan = a.SdtNguoiNhan,
-                    IdNhanVien = a.IdNhanVien,
-                    IdKhachHang = a.IdKhachHang,
-                    IdVoucher = a.IdVoucher,
+                    //IdNhanVien = a.IdNhanVien,
+                    //IdKhachHang = a.IdKhachHang,
+                    //IdVoucher = a.IdVoucher,
                     MaNhanVien = b.Ma,
-                    MaKhachHang = c.Ma,
-                    MaVoucher = d.Ma
+                    MaVoucher = d.Ma,
+                    GiaTriVoucher = d.GiaTri,
+                    SdtKhachHang = c.SDT
                 }
                 ).ToList();
             return listhoadon;
@@ -78,7 +79,6 @@ namespace _2.BUS.Service
             if (hdview == null) return "Thất bại";
             HoaDon t = new HoaDon();
             t.ID = hdview.ID;
-            t.NgayTao = hdview.NgayTao;
             t.TenNguoiNhan = hdview.TenNguoiNhan;
             t.TinhTrang = hdview.TinhTrang;
             t.SdtNguoiNhan = hdview.SdtNguoiNhan;

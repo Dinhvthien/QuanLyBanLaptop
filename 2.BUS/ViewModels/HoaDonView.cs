@@ -17,7 +17,8 @@ namespace _2.BUS.ViewModels
         public virtual KhachHang? KhachHang { get; set; }
         public virtual Voucher? Voucher { get; set; }
         public string MaNhanVien { get; set; }
-        public string MaKhachHang { get; set; }
+        public string SdtKhachHang { get; set; }
         public string MaVoucher { get; set; }
+        public decimal GiaTriVoucher { get; set; }
     }
 }

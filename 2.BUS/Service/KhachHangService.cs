@@ -14,7 +14,6 @@ namespace _2.BUS.Service
             if (khv == null) return "Thất bại";
             KhachHang thao = new KhachHang();
             thao.ID = khv.ID;
-            thao.Ma = khv.Ma;
             thao.HoTen = khv.HoTen;
             thao.DiaChi = khv.DiaChi;
             thao.SDT = khv.SDT;
@@ -22,10 +21,10 @@ namespace _2.BUS.Service
             else return "Thất bại";
         }
 
-        public bool CheckMa(string ma)
+        public bool CheckSDT(string sdt)
         {
             var t = khachHangRepositories.GetKhachHang();
-            var thao = t.FirstOrDefault(a => a.Ma == ma);
+            var thao = t.FirstOrDefault(a => a.SDT == sdt);
             if (thao != null) return true;
             else return false;
         }
@@ -47,7 +46,6 @@ namespace _2.BUS.Service
                 select new KhachHangView()
                 {
                     ID = a.ID,
-                    Ma = a.Ma,
                     HoTen = a.HoTen,
                     DiaChi = a.DiaChi,
                     SDT = a.SDT
@@ -64,7 +62,6 @@ namespace _2.BUS.Service
                 select new KhachHangView()
                 {
                     ID = a.ID,
-                    Ma = a.Ma,
                     HoTen = a.HoTen,
                     DiaChi = a.DiaChi,
                     SDT = a.SDT
@@ -80,7 +77,6 @@ namespace _2.BUS.Service
             thao.ID = khv.ID;
             thao.HoTen = khv.HoTen;
             thao.DiaChi = khv.DiaChi;
-            thao.SDT = khv.SDT;
             if (khachHangRepositories.Update(thao)) return "Thành Công";
             else return "Thất bại";
         }

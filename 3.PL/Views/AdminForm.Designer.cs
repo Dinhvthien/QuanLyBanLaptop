@@ -74,6 +74,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabp_voucher = new System.Windows.Forms.TabPage();
+            this.tbx_soluongvoucher = new System.Windows.Forms.TextBox();
             this.tbx_giatrivoucher = new System.Windows.Forms.TextBox();
             this.dtp_ngayktvc = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngaybdvc = new System.Windows.Forms.DateTimePicker();
@@ -81,7 +82,6 @@
             this.btn_suavoucher = new System.Windows.Forms.Button();
             this.btn_xoavoucher = new System.Windows.Forms.Button();
             this.btn_themvoucher = new System.Windows.Forms.Button();
-            this.nud_soluongvoucher = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -100,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_shownhanvien)).BeginInit();
             this.tabp_voucher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showvoucher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_soluongvoucher)).BeginInit();
             this.SuspendLayout();
             // 
             // tabctrl_admin
@@ -111,12 +110,13 @@
             this.tabctrl_admin.Controls.Add(this.tabp_chucvu);
             this.tabctrl_admin.Controls.Add(this.tabp_nhanvien);
             this.tabctrl_admin.Controls.Add(this.tabp_voucher);
+            this.tabctrl_admin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabctrl_admin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.tabctrl_admin.Location = new System.Drawing.Point(12, 12);
+            this.tabctrl_admin.Location = new System.Drawing.Point(0, 0);
             this.tabctrl_admin.Multiline = true;
             this.tabctrl_admin.Name = "tabctrl_admin";
             this.tabctrl_admin.SelectedIndex = 0;
-            this.tabctrl_admin.Size = new System.Drawing.Size(1080, 447);
+            this.tabctrl_admin.Size = new System.Drawing.Size(1104, 474);
             this.tabctrl_admin.TabIndex = 0;
             // 
             // tabp_show
@@ -124,7 +124,7 @@
             this.tabp_show.Location = new System.Drawing.Point(4, 33);
             this.tabp_show.Name = "tabp_show";
             this.tabp_show.Padding = new System.Windows.Forms.Padding(3);
-            this.tabp_show.Size = new System.Drawing.Size(1072, 410);
+            this.tabp_show.Size = new System.Drawing.Size(1096, 437);
             this.tabp_show.TabIndex = 0;
             this.tabp_show.Text = "Thông tin";
             this.tabp_show.UseVisualStyleBackColor = true;
@@ -211,6 +211,7 @@
             this.tbx_sdtcuahang.Name = "tbx_sdtcuahang";
             this.tbx_sdtcuahang.Size = new System.Drawing.Size(100, 29);
             this.tbx_sdtcuahang.TabIndex = 6;
+            this.tbx_sdtcuahang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_sdtcuahang_KeyPress);
             // 
             // label4
             // 
@@ -430,6 +431,7 @@
             this.tbx_sdtnhanvien.Name = "tbx_sdtnhanvien";
             this.tbx_sdtnhanvien.Size = new System.Drawing.Size(122, 29);
             this.tbx_sdtnhanvien.TabIndex = 41;
+            this.tbx_sdtnhanvien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_sdtnhanvien_KeyPress);
             // 
             // label13
             // 
@@ -559,6 +561,7 @@
             // 
             // tabp_voucher
             // 
+            this.tabp_voucher.Controls.Add(this.tbx_soluongvoucher);
             this.tabp_voucher.Controls.Add(this.tbx_giatrivoucher);
             this.tabp_voucher.Controls.Add(this.dtp_ngayktvc);
             this.tabp_voucher.Controls.Add(this.dtp_ngaybdvc);
@@ -566,7 +569,6 @@
             this.tabp_voucher.Controls.Add(this.btn_suavoucher);
             this.tabp_voucher.Controls.Add(this.btn_xoavoucher);
             this.tabp_voucher.Controls.Add(this.btn_themvoucher);
-            this.tabp_voucher.Controls.Add(this.nud_soluongvoucher);
             this.tabp_voucher.Controls.Add(this.label15);
             this.tabp_voucher.Controls.Add(this.label16);
             this.tabp_voucher.Controls.Add(this.label17);
@@ -583,9 +585,17 @@
             this.tabp_voucher.Text = "Voucher";
             this.tabp_voucher.UseVisualStyleBackColor = true;
             // 
+            // tbx_soluongvoucher
+            // 
+            this.tbx_soluongvoucher.Location = new System.Drawing.Point(167, 276);
+            this.tbx_soluongvoucher.Name = "tbx_soluongvoucher";
+            this.tbx_soluongvoucher.Size = new System.Drawing.Size(63, 29);
+            this.tbx_soluongvoucher.TabIndex = 66;
+            this.tbx_soluongvoucher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_soluongvoucher_KeyPress);
+            // 
             // tbx_giatrivoucher
             // 
-            this.tbx_giatrivoucher.Location = new System.Drawing.Point(124, 230);
+            this.tbx_giatrivoucher.Location = new System.Drawing.Point(167, 236);
             this.tbx_giatrivoucher.Name = "tbx_giatrivoucher";
             this.tbx_giatrivoucher.Size = new System.Drawing.Size(169, 29);
             this.tbx_giatrivoucher.TabIndex = 65;
@@ -648,13 +658,6 @@
             this.btn_themvoucher.Text = "Thêm";
             this.btn_themvoucher.UseVisualStyleBackColor = true;
             this.btn_themvoucher.Click += new System.EventHandler(this.btn_themvoucher_Click);
-            // 
-            // nud_soluongvoucher
-            // 
-            this.nud_soluongvoucher.Location = new System.Drawing.Point(121, 261);
-            this.nud_soluongvoucher.Name = "nud_soluongvoucher";
-            this.nud_soluongvoucher.Size = new System.Drawing.Size(85, 29);
-            this.nud_soluongvoucher.TabIndex = 58;
             // 
             // label15
             // 
@@ -748,7 +751,6 @@
             this.tabp_voucher.ResumeLayout(false);
             this.tabp_voucher.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showvoucher)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_soluongvoucher)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -801,7 +803,6 @@
         private Label label6;
         private NumericUpDown nud_ttnhanvien;
         private TabPage tabp_voucher;
-        private NumericUpDown nud_soluongvoucher;
         private Label label15;
         private Label label16;
         private Label label17;
@@ -817,5 +818,6 @@
         private Button btn_xoavoucher;
         private Button btn_themvoucher;
         private TextBox tbx_giatrivoucher;
+        private TextBox tbx_soluongvoucher;
     }
 }

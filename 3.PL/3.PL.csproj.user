@@ -4,6 +4,9 @@
     <Compile Update="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\DataStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\FormBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11,9 +14,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\IndexForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\LoginAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\QuanLyLaptopForm.cs">
