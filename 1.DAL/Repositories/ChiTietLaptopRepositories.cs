@@ -40,5 +40,15 @@ namespace _1.DAL.Repositories
             context.SaveChanges();
             return true;
         }
+
+        public bool UpdateSoLuong(ChiTietLaptop ctlt)
+        {
+            if (ctlt == null) return false;
+            var t = context.ChiTietLapTops.Find(ctlt.ID);
+            t.SoLuong = ctlt.SoLuong;
+            context.Update(t);
+            context.SaveChanges();
+            return true;
+        }
     }
 }

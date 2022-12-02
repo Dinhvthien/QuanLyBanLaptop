@@ -48,6 +48,13 @@ namespace _3.PL.Views
         {
             //   LoadDataIndex();
             //  mni_username.Text = Sdtnv;
+            IBtn_quanlylaptop.Visible = false;
+            IBtn_AdminForm.Visible = false;
+            if (FormLogin.CheckAdmin == 1)
+            {
+                IBtn_quanlylaptop.Visible = true;
+                IBtn_AdminForm.Visible = true;
+            }
         }
         private void mni_admin_Click(object sender, EventArgs e)
         {
@@ -57,30 +64,10 @@ namespace _3.PL.Views
             //laf.ShowDialog();
             //this.Show();
         }
-
-        private void tsmi_quanlylaptop_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //QuanLyLaptopForm qllaptop = new QuanLyLaptopForm();
-            //qllaptop.ShowDialog();
-            //this.Show();
-
-            OpenZeroForm(new QuanLyLaptopForm());
-        }
-
         private void tsmni_dangxuat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void tsmn_banhang_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //FormBanHang fbh = new FormBanHang();
-            //fbh.ShowDialog();
-            //this.Show();
-        }
-
         private void IBtn_banhang_Click(object sender, EventArgs e)
         {
             OpenZeroForm(new FormBanHang());
@@ -98,24 +85,22 @@ namespace _3.PL.Views
             }
 
         }
-
-        private void IBtn_loginAdminForm_Click(object sender, EventArgs e)
+        private void IBtn_thongke_Click(object sender, EventArgs e)
         {
-           
+            OpenZeroForm(new DataStatistics());
+        }
+
+        private void IBtn_AdminForm_Click(object sender, EventArgs e)
+        {
+
             if (FormLogin.CheckAdmin == 1)
             {
-              OpenZeroForm(new AdminForm());
+                OpenZeroForm(new AdminForm());
             }
             else
             {
                 MessageBox.Show("Chỉ Admin mới có quyền vào đây", "Cảnh báo !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        private void IBtn_thongke_Click(object sender, EventArgs e)
-        {
-            OpenZeroForm(new DataStatistics());
         }
     }
 }

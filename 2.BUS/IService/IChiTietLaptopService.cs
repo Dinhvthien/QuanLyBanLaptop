@@ -7,8 +7,9 @@ namespace _2.BUS.IService
         string Add(ChiTietLaptopView ctltview);
         string Update(ChiTietLaptopView ctltview);
         string Delete(ChiTietLaptopView ctltview);
-        //bool CheckMa(string ma);
+        bool CheckMa(string ma);
         List<ChiTietLaptopView> GetChiTietLaptop();
         List<ChiTietLaptopView> GetChiTietLaptopNoJoin();
+        string UpdateSoLuong(ChiTietLaptopView ctltview);
     }
 }

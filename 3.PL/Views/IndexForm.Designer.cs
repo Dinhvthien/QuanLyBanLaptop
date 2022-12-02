@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.ms_menuindex = new System.Windows.Forms.MenuStrip();
-            this.tsmi_quanlylaptop = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_admin = new System.Windows.Forms.ToolStripMenuItem();
             this.mni_username = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmni_dangxuat = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_formload = new System.Windows.Forms.Panel();
             this.IBtn_thongke = new FontAwesome.Sharp.IconButton();
-            this.IBtn_loginAdminForm = new FontAwesome.Sharp.IconButton();
+            this.IBtn_AdminForm = new FontAwesome.Sharp.IconButton();
             this.IBtn_quanlylaptop = new FontAwesome.Sharp.IconButton();
             this.IBtn_banhang = new FontAwesome.Sharp.IconButton();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -52,7 +51,6 @@
             this.ms_menuindex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ms_menuindex.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ms_menuindex.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_quanlylaptop,
             this.mni_admin,
             this.mni_username});
             this.ms_menuindex.Location = new System.Drawing.Point(0, 0);
@@ -60,13 +58,6 @@
             this.ms_menuindex.Size = new System.Drawing.Size(1086, 33);
             this.ms_menuindex.TabIndex = 0;
             this.ms_menuindex.Text = "Menu Index";
-            // 
-            // tsmi_quanlylaptop
-            // 
-            this.tsmi_quanlylaptop.Name = "tsmi_quanlylaptop";
-            this.tsmi_quanlylaptop.Size = new System.Drawing.Size(150, 29);
-            this.tsmi_quanlylaptop.Text = "Quản lý laptop";
-            this.tsmi_quanlylaptop.Click += new System.EventHandler(this.tsmi_quanlylaptop_Click);
             // 
             // mni_admin
             // 
@@ -101,7 +92,7 @@
             // panel_formload
             // 
             this.panel_formload.Controls.Add(this.IBtn_thongke);
-            this.panel_formload.Controls.Add(this.IBtn_loginAdminForm);
+            this.panel_formload.Controls.Add(this.IBtn_AdminForm);
             this.panel_formload.Controls.Add(this.IBtn_quanlylaptop);
             this.panel_formload.Controls.Add(this.IBtn_banhang);
             this.panel_formload.Dock = System.Windows.Forms.DockStyle.Left;
@@ -129,24 +120,24 @@
             this.IBtn_thongke.UseVisualStyleBackColor = false;
             this.IBtn_thongke.Click += new System.EventHandler(this.IBtn_thongke_Click);
             // 
-            // IBtn_loginAdminForm
+            // IBtn_AdminForm
             // 
-            this.IBtn_loginAdminForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(89)))));
-            this.IBtn_loginAdminForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IBtn_loginAdminForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.IBtn_loginAdminForm.ForeColor = System.Drawing.Color.White;
-            this.IBtn_loginAdminForm.IconChar = FontAwesome.Sharp.IconChar.UserShield;
-            this.IBtn_loginAdminForm.IconColor = System.Drawing.Color.White;
-            this.IBtn_loginAdminForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IBtn_loginAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IBtn_loginAdminForm.Location = new System.Drawing.Point(0, 128);
-            this.IBtn_loginAdminForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IBtn_loginAdminForm.Name = "IBtn_loginAdminForm";
-            this.IBtn_loginAdminForm.Size = new System.Drawing.Size(184, 54);
-            this.IBtn_loginAdminForm.TabIndex = 7;
-            this.IBtn_loginAdminForm.Text = "Admin";
-            this.IBtn_loginAdminForm.UseVisualStyleBackColor = false;
-            this.IBtn_loginAdminForm.Click += new System.EventHandler(this.IBtn_loginAdminForm_Click);
+            this.IBtn_AdminForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(89)))));
+            this.IBtn_AdminForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IBtn_AdminForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.IBtn_AdminForm.ForeColor = System.Drawing.Color.White;
+            this.IBtn_AdminForm.IconChar = FontAwesome.Sharp.IconChar.UserShield;
+            this.IBtn_AdminForm.IconColor = System.Drawing.Color.White;
+            this.IBtn_AdminForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IBtn_AdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IBtn_AdminForm.Location = new System.Drawing.Point(0, 128);
+            this.IBtn_AdminForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IBtn_AdminForm.Name = "IBtn_AdminForm";
+            this.IBtn_AdminForm.Size = new System.Drawing.Size(184, 54);
+            this.IBtn_AdminForm.TabIndex = 7;
+            this.IBtn_AdminForm.Text = "Admin";
+            this.IBtn_AdminForm.UseVisualStyleBackColor = false;
+            this.IBtn_AdminForm.Click += new System.EventHandler(this.IBtn_AdminForm_Click);
             // 
             // IBtn_quanlylaptop
             // 
@@ -241,11 +232,10 @@
         private ToolStripMenuItem tsmni_dangxuat;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem mni_admin;
-        private ToolStripMenuItem tsmi_quanlylaptop;
         private Panel panel_formload;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private FontAwesome.Sharp.IconButton IBtn_thongke;
-        private FontAwesome.Sharp.IconButton IBtn_loginAdminForm;
+        private FontAwesome.Sharp.IconButton IBtn_AdminForm;
         private FontAwesome.Sharp.IconButton IBtn_quanlylaptop;
         private FontAwesome.Sharp.IconButton IBtn_banhang;
         private Panel panel_index;

@@ -120,5 +120,26 @@ namespace _2.BUS.Service
                 ).ToList();
             return listview;
         }
+
+        public bool CheckMa(string ma)
+        {
+            var th = chiTietLaptopRepositories.GetChiTietLaptop();
+            var linh = th.FirstOrDefault(a=>a.Ma== ma);
+            if (linh != null)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public string UpdateSoLuong(ChiTietLaptopView ctltview)
+        {
+            if (ctltview == null) return "Thất bại";
+            ChiTietLaptop t = new ChiTietLaptop();
+            t.ID = ctltview.ID;
+            t.SoLuong = ctltview.SoLuong;
+            if (chiTietLaptopRepositories.UpdateSoLuong(t)) return "Thành công";
+            else return "Thất bại";
+        }
     }
 }

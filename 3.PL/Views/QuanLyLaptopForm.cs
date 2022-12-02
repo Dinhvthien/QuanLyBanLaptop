@@ -28,7 +28,7 @@ namespace _3.PL.Views
             thuocTinhService = new ThuocTinhService();
             giaTriService = new GiaTriService();
             chiTietLaptopService = new ChiTietLaptopService();
-            imeiService= new ImeiService();
+            imeiService = new ImeiService();
         }
         void LoadDataMauSac(List<MauSacView> listms)
         {
@@ -141,10 +141,11 @@ namespace _3.PL.Views
             dtg_showchitietlaptop.Columns[10].Visible = false;
             dtg_showchitietlaptop.Columns[11].Visible = false;
             dtg_showchitietlaptop.Columns[12].Visible = false;
+            dtg_showchitietlaptop.Columns[13].Visible = false;
             foreach (var s in list)
             {
                 sttctlt++;
-                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.Ma, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban,s.SoImei);
+                dtg_showchitietlaptop.Rows.Add(s.ID, sttctlt, s.Ma, s.MaLaptop, s.TenLaptop, s.TenThuocTinh, s.ThongSoGiaTri, s.MaNsx, s.MaMauSac, s.MoTa, s.SoLuong, s.GiaNhap, s.Giaban, s.SoImei);
             }
         }
         void LoadCombobox()
@@ -406,8 +407,16 @@ namespace _3.PL.Views
             thao.SoLuong = Convert.ToInt32(tbx_soluongctlt.Text);
             thao.GiaNhap = Convert.ToDecimal(tbx_ctltgianhap.Text);
             thao.Giaban = Convert.ToDecimal(tbx_ctltgiaban.Text);
-            MessageBox.Show(chiTietLaptopService.Add(thao));
-            LoadDataChiTietLaptop(chiTietLaptopService.GetChiTietLaptop());
+            if (chiTietLaptopService.CheckMa(tbx_machitietlaptop.Text))
+            {
+                MessageBox.Show("Mã đã tồn tại", "Warrning !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show(chiTietLaptopService.Add(thao));
+                LoadDataChiTietLaptop(chiTietLaptopService.GetChiTietLaptop());
+            }
+
         }
 
         private void btn_suactlt_Click(object sender, EventArgs e)

@@ -31,12 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.tabcotrol_frombanhang = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.tbx_mahoadonchitiet = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbx_soimeidaban = new System.Windows.Forms.TextBox();
-            this.btn_taohoadonchitiet = new System.Windows.Forms.Button();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rbt_hienthiall = new System.Windows.Forms.RadioButton();
+            this.rbt_timhoadonchuatt = new System.Windows.Forms.RadioButton();
+            this.rbt_timhddathanhtoan = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -47,16 +46,21 @@
             this.clh_tenlaptop = new System.Windows.Forms.ColumnHeader();
             this.clh_soimei = new System.Windows.Forms.ColumnHeader();
             this.clh_dongia = new System.Windows.Forms.ColumnHeader();
-            this.btn_autofill = new System.Windows.Forms.Button();
-            this.btn_themimeidaban = new System.Windows.Forms.Button();
+            this.dtg_showhoadon = new System.Windows.Forms.DataGridView();
             this.dtg_hoadonchitiet = new System.Windows.Forms.DataGridView();
-            this.btn_suahoadonchitiet = new System.Windows.Forms.Button();
             this.btn_xoahoadonchitiet = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbx_mahoadonchitiet = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tbx_soimeidaban = new System.Windows.Forms.TextBox();
+            this.btn_themimeidaban = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tbx_thanhtien = new System.Windows.Forms.TextBox();
+            this.btn_taohoadonchitiet = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.tbx_giagoc = new System.Windows.Forms.TextBox();
             this.tbx_giamgia = new System.Windows.Forms.TextBox();
@@ -80,7 +84,6 @@
             this.tbx_tennguoinhan = new System.Windows.Forms.TextBox();
             this.tbx_sdtnguoinhan = new System.Windows.Forms.TextBox();
             this.tbx_hoadon_mactlt = new System.Windows.Forms.TextBox();
-            this.dtg_createhoadon = new System.Windows.Forms.DataGridView();
             this.btn_createhoadon = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,7 +98,6 @@
             this.btn_xoakhachhang = new System.Windows.Forms.Button();
             this.tbx_sdtkhachhang = new System.Windows.Forms.TextBox();
             this.btn_themkhachhang = new System.Windows.Forms.Button();
-            this.dtg_showhoadon = new System.Windows.Forms.DataGridView();
             this.btn_suahoadon = new System.Windows.Forms.Button();
             this.btn_xoahoadon = new System.Windows.Forms.Button();
             this.btn_themhoadon = new System.Windows.Forms.Button();
@@ -122,17 +124,17 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabcotrol_frombanhang.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudz_slhoadon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_showhoadon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadonchitiet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_hdctsoluong)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_createhoadon)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showkhachhang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_showhoadon)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_qrcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_xemlaptop)).BeginInit();
@@ -154,21 +156,18 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.btn_thanhtoan);
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.listview_hoadon);
-            this.tabPage1.Controls.Add(this.btn_autofill);
-            this.tabPage1.Controls.Add(this.btn_themimeidaban);
+            this.tabPage1.Controls.Add(this.dtg_showhoadon);
             this.tabPage1.Controls.Add(this.dtg_hoadonchitiet);
-            this.tabPage1.Controls.Add(this.btn_suahoadonchitiet);
             this.tabPage1.Controls.Add(this.btn_xoahoadonchitiet);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.tbx_hoadon_mactlt);
-            this.tabPage1.Controls.Add(this.dtg_createhoadon);
             this.tabPage1.Controls.Add(this.btn_createhoadon);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.dtg_showhoadon);
             this.tabPage1.Controls.Add(this.btn_suahoadon);
             this.tabPage1.Controls.Add(this.btn_xoahoadon);
             this.tabPage1.Controls.Add(this.btn_themhoadon);
@@ -180,14 +179,220 @@
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseWaitCursor = true;
             // 
+            // btn_thanhtoan
+            // 
+            this.btn_thanhtoan.Location = new System.Drawing.Point(386, 672);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(114, 23);
+            this.btn_thanhtoan.TabIndex = 68;
+            this.btn_thanhtoan.Text = "Thanh Toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.UseWaitCursor = true;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rbt_hienthiall);
+            this.panel3.Controls.Add(this.rbt_timhoadonchuatt);
+            this.panel3.Controls.Add(this.rbt_timhddathanhtoan);
+            this.panel3.Location = new System.Drawing.Point(383, 588);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(128, 78);
+            this.panel3.TabIndex = 67;
+            this.panel3.UseWaitCursor = true;
+            // 
+            // rbt_hienthiall
+            // 
+            this.rbt_hienthiall.AutoSize = true;
+            this.rbt_hienthiall.Location = new System.Drawing.Point(3, 53);
+            this.rbt_hienthiall.Name = "rbt_hienthiall";
+            this.rbt_hienthiall.Size = new System.Drawing.Size(56, 19);
+            this.rbt_hienthiall.TabIndex = 67;
+            this.rbt_hienthiall.TabStop = true;
+            this.rbt_hienthiall.Text = "Tất cả";
+            this.rbt_hienthiall.UseVisualStyleBackColor = true;
+            this.rbt_hienthiall.UseWaitCursor = true;
+            this.rbt_hienthiall.CheckedChanged += new System.EventHandler(this.rbt_hienthiall_CheckedChanged);
+            // 
+            // rbt_timhoadonchuatt
+            // 
+            this.rbt_timhoadonchuatt.AutoSize = true;
+            this.rbt_timhoadonchuatt.Location = new System.Drawing.Point(3, 3);
+            this.rbt_timhoadonchuatt.Name = "rbt_timhoadonchuatt";
+            this.rbt_timhoadonchuatt.Size = new System.Drawing.Size(114, 19);
+            this.rbt_timhoadonchuatt.TabIndex = 65;
+            this.rbt_timhoadonchuatt.TabStop = true;
+            this.rbt_timhoadonchuatt.Text = "Chưa thanh toán";
+            this.rbt_timhoadonchuatt.UseVisualStyleBackColor = true;
+            this.rbt_timhoadonchuatt.UseWaitCursor = true;
+            this.rbt_timhoadonchuatt.CheckedChanged += new System.EventHandler(this.rbt_timhoadonchuatt_CheckedChanged);
+            // 
+            // rbt_timhddathanhtoan
+            // 
+            this.rbt_timhddathanhtoan.AutoSize = true;
+            this.rbt_timhddathanhtoan.Location = new System.Drawing.Point(3, 28);
+            this.rbt_timhddathanhtoan.Name = "rbt_timhddathanhtoan";
+            this.rbt_timhddathanhtoan.Size = new System.Drawing.Size(100, 19);
+            this.rbt_timhddathanhtoan.TabIndex = 66;
+            this.rbt_timhddathanhtoan.TabStop = true;
+            this.rbt_timhddathanhtoan.Text = "Đã thanh toán";
+            this.rbt_timhddathanhtoan.UseVisualStyleBackColor = true;
+            this.rbt_timhddathanhtoan.UseWaitCursor = true;
+            this.rbt_timhddathanhtoan.CheckedChanged += new System.EventHandler(this.rbt_timhddathanhtoan_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.tbx_tongtien);
+            this.panel1.Controls.Add(this.nudz_slhoadon);
+            this.panel1.Location = new System.Drawing.Point(357, 341);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(169, 65);
+            this.panel1.TabIndex = 63;
+            this.panel1.UseWaitCursor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(-1, 35);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 15);
+            this.label26.TabIndex = 64;
+            this.label26.Text = "Tổng tiền";
+            this.label26.UseWaitCursor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(3, 8);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(54, 15);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "Số lượng";
+            this.label25.UseWaitCursor = true;
+            // 
+            // tbx_tongtien
+            // 
+            this.tbx_tongtien.Location = new System.Drawing.Point(66, 32);
+            this.tbx_tongtien.Name = "tbx_tongtien";
+            this.tbx_tongtien.Size = new System.Drawing.Size(100, 23);
+            this.tbx_tongtien.TabIndex = 62;
+            this.tbx_tongtien.UseWaitCursor = true;
+            // 
+            // nudz_slhoadon
+            // 
+            this.nudz_slhoadon.Location = new System.Drawing.Point(66, 3);
+            this.nudz_slhoadon.Name = "nudz_slhoadon";
+            this.nudz_slhoadon.Size = new System.Drawing.Size(31, 23);
+            this.nudz_slhoadon.TabIndex = 61;
+            this.nudz_slhoadon.UseWaitCursor = true;
+            // 
+            // listview_hoadon
+            // 
+            this.listview_hoadon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clh_mactlt,
+            this.clh_tenlaptop,
+            this.clh_soimei,
+            this.clh_dongia});
+            this.listview_hoadon.Location = new System.Drawing.Point(3, 304);
+            this.listview_hoadon.Name = "listview_hoadon";
+            this.listview_hoadon.Size = new System.Drawing.Size(354, 189);
+            this.listview_hoadon.TabIndex = 60;
+            this.listview_hoadon.UseCompatibleStateImageBehavior = false;
+            this.listview_hoadon.UseWaitCursor = true;
+            this.listview_hoadon.View = System.Windows.Forms.View.Details;
+            // 
+            // clh_mactlt
+            // 
+            this.clh_mactlt.Text = "Mã chi tiết laptop";
+            this.clh_mactlt.Width = 120;
+            // 
+            // clh_tenlaptop
+            // 
+            this.clh_tenlaptop.Text = "Tên Laptop";
+            this.clh_tenlaptop.Width = 90;
+            // 
+            // clh_soimei
+            // 
+            this.clh_soimei.Text = "Số Imei";
+            // 
+            // clh_dongia
+            // 
+            this.clh_dongia.Text = "Đơn giá";
+            // 
+            // dtg_showhoadon
+            // 
+            this.dtg_showhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_showhoadon.Location = new System.Drawing.Point(3, 491);
+            this.dtg_showhoadon.Name = "dtg_showhoadon";
+            this.dtg_showhoadon.RowTemplate.Height = 25;
+            this.dtg_showhoadon.Size = new System.Drawing.Size(354, 260);
+            this.dtg_showhoadon.TabIndex = 21;
+            this.dtg_showhoadon.UseWaitCursor = true;
+            this.dtg_showhoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showhoadon_CellClick);
+            // 
+            // dtg_hoadonchitiet
+            // 
+            this.dtg_hoadonchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_hoadonchitiet.Location = new System.Drawing.Point(688, 352);
+            this.dtg_hoadonchitiet.Name = "dtg_hoadonchitiet";
+            this.dtg_hoadonchitiet.RowTemplate.Height = 25;
+            this.dtg_hoadonchitiet.Size = new System.Drawing.Size(691, 378);
+            this.dtg_hoadonchitiet.TabIndex = 58;
+            this.dtg_hoadonchitiet.UseWaitCursor = true;
+            this.dtg_hoadonchitiet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_hoadonchitiet_CellClick);
+            // 
+            // btn_xoahoadonchitiet
+            // 
+            this.btn_xoahoadonchitiet.BackColor = System.Drawing.Color.Red;
+            this.btn_xoahoadonchitiet.Location = new System.Drawing.Point(638, 531);
+            this.btn_xoahoadonchitiet.Name = "btn_xoahoadonchitiet";
+            this.btn_xoahoadonchitiet.Size = new System.Drawing.Size(44, 26);
+            this.btn_xoahoadonchitiet.TabIndex = 54;
+            this.btn_xoahoadonchitiet.Text = "Xóa";
+            this.btn_xoahoadonchitiet.UseVisualStyleBackColor = false;
+            this.btn_xoahoadonchitiet.UseWaitCursor = true;
+            this.btn_xoahoadonchitiet.Click += new System.EventHandler(this.btn_xoahoadonchitiet_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.tbx_thanhtien);
+            this.groupBox1.Controls.Add(this.btn_taohoadonchitiet);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.tbx_giagoc);
+            this.groupBox1.Controls.Add(this.tbx_giamgia);
+            this.groupBox1.Controls.Add(this.nud_hdctsoluong);
+            this.groupBox1.Location = new System.Drawing.Point(535, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 313);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tính tiền";
+            this.groupBox1.UseWaitCursor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 93);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 15);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Giảm giá";
+            this.label19.UseWaitCursor = true;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.tbx_mahoadonchitiet);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.tbx_soimeidaban);
-            this.panel2.Controls.Add(this.btn_taohoadonchitiet);
-            this.panel2.Location = new System.Drawing.Point(535, 168);
+            this.panel2.Controls.Add(this.btn_themimeidaban);
+            this.panel2.Location = new System.Drawing.Point(8, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 98);
             this.panel2.TabIndex = 64;
@@ -230,182 +435,17 @@
             this.tbx_soimeidaban.TabIndex = 56;
             this.tbx_soimeidaban.UseWaitCursor = true;
             // 
-            // btn_taohoadonchitiet
-            // 
-            this.btn_taohoadonchitiet.BackColor = System.Drawing.Color.Lime;
-            this.btn_taohoadonchitiet.Location = new System.Drawing.Point(97, 64);
-            this.btn_taohoadonchitiet.Name = "btn_taohoadonchitiet";
-            this.btn_taohoadonchitiet.Size = new System.Drawing.Size(74, 24);
-            this.btn_taohoadonchitiet.TabIndex = 52;
-            this.btn_taohoadonchitiet.Text = "Lưu ";
-            this.btn_taohoadonchitiet.UseVisualStyleBackColor = false;
-            this.btn_taohoadonchitiet.UseWaitCursor = true;
-            this.btn_taohoadonchitiet.Click += new System.EventHandler(this.btn_taohoadonchitiet_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.tbx_tongtien);
-            this.panel1.Controls.Add(this.nudz_slhoadon);
-            this.panel1.Location = new System.Drawing.Point(360, 296);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 65);
-            this.panel1.TabIndex = 63;
-            this.panel1.UseWaitCursor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 32);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(57, 15);
-            this.label26.TabIndex = 64;
-            this.label26.Text = "Tổng tiền";
-            this.label26.UseWaitCursor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(2, 9);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(54, 15);
-            this.label25.TabIndex = 63;
-            this.label25.Text = "Số lượng";
-            this.label25.UseWaitCursor = true;
-            // 
-            // tbx_tongtien
-            // 
-            this.tbx_tongtien.Location = new System.Drawing.Point(66, 32);
-            this.tbx_tongtien.Name = "tbx_tongtien";
-            this.tbx_tongtien.Size = new System.Drawing.Size(100, 23);
-            this.tbx_tongtien.TabIndex = 62;
-            this.tbx_tongtien.UseWaitCursor = true;
-            // 
-            // nudz_slhoadon
-            // 
-            this.nudz_slhoadon.Location = new System.Drawing.Point(66, 0);
-            this.nudz_slhoadon.Name = "nudz_slhoadon";
-            this.nudz_slhoadon.Size = new System.Drawing.Size(31, 23);
-            this.nudz_slhoadon.TabIndex = 61;
-            this.nudz_slhoadon.UseWaitCursor = true;
-            // 
-            // listview_hoadon
-            // 
-            this.listview_hoadon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clh_mactlt,
-            this.clh_tenlaptop,
-            this.clh_soimei,
-            this.clh_dongia});
-            this.listview_hoadon.Location = new System.Drawing.Point(3, 296);
-            this.listview_hoadon.Name = "listview_hoadon";
-            this.listview_hoadon.Size = new System.Drawing.Size(354, 189);
-            this.listview_hoadon.TabIndex = 60;
-            this.listview_hoadon.UseCompatibleStateImageBehavior = false;
-            this.listview_hoadon.UseWaitCursor = true;
-            this.listview_hoadon.View = System.Windows.Forms.View.Details;
-            // 
-            // clh_mactlt
-            // 
-            this.clh_mactlt.Text = "Mã chi tiết laptop";
-            this.clh_mactlt.Width = 120;
-            // 
-            // clh_tenlaptop
-            // 
-            this.clh_tenlaptop.Text = "Tên Laptop";
-            // 
-            // clh_soimei
-            // 
-            this.clh_soimei.Text = "Số Imei";
-            // 
-            // clh_dongia
-            // 
-            this.clh_dongia.Text = "Đơn giá";
-            // 
-            // btn_autofill
-            // 
-            this.btn_autofill.BackColor = System.Drawing.Color.Purple;
-            this.btn_autofill.Location = new System.Drawing.Point(346, 650);
-            this.btn_autofill.Name = "btn_autofill";
-            this.btn_autofill.Size = new System.Drawing.Size(217, 56);
-            this.btn_autofill.TabIndex = 21;
-            this.btn_autofill.Text = "Auto Fill";
-            this.btn_autofill.UseVisualStyleBackColor = false;
-            this.btn_autofill.UseWaitCursor = true;
-            this.btn_autofill.Click += new System.EventHandler(this.btn_autofill_Click);
-            // 
             // btn_themimeidaban
             // 
             this.btn_themimeidaban.BackColor = System.Drawing.Color.Lime;
-            this.btn_themimeidaban.Location = new System.Drawing.Point(445, 546);
+            this.btn_themimeidaban.Location = new System.Drawing.Point(3, 56);
             this.btn_themimeidaban.Name = "btn_themimeidaban";
-            this.btn_themimeidaban.Size = new System.Drawing.Size(81, 24);
+            this.btn_themimeidaban.Size = new System.Drawing.Size(207, 39);
             this.btn_themimeidaban.TabIndex = 59;
             this.btn_themimeidaban.Text = "Đánh dấu Imei đã bán";
             this.btn_themimeidaban.UseVisualStyleBackColor = false;
             this.btn_themimeidaban.UseWaitCursor = true;
             this.btn_themimeidaban.Click += new System.EventHandler(this.btn_themimeidaban_Click);
-            // 
-            // dtg_hoadonchitiet
-            // 
-            this.dtg_hoadonchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_hoadonchitiet.Location = new System.Drawing.Point(704, 448);
-            this.dtg_hoadonchitiet.Name = "dtg_hoadonchitiet";
-            this.dtg_hoadonchitiet.RowTemplate.Height = 25;
-            this.dtg_hoadonchitiet.Size = new System.Drawing.Size(486, 314);
-            this.dtg_hoadonchitiet.TabIndex = 58;
-            this.dtg_hoadonchitiet.UseWaitCursor = true;
-            this.dtg_hoadonchitiet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_hoadonchitiet_CellClick);
-            // 
-            // btn_suahoadonchitiet
-            // 
-            this.btn_suahoadonchitiet.BackColor = System.Drawing.Color.Yellow;
-            this.btn_suahoadonchitiet.Location = new System.Drawing.Point(601, 506);
-            this.btn_suahoadonchitiet.Name = "btn_suahoadonchitiet";
-            this.btn_suahoadonchitiet.Size = new System.Drawing.Size(67, 26);
-            this.btn_suahoadonchitiet.TabIndex = 53;
-            this.btn_suahoadonchitiet.Text = "Sửa";
-            this.btn_suahoadonchitiet.UseVisualStyleBackColor = false;
-            this.btn_suahoadonchitiet.UseWaitCursor = true;
-            // 
-            // btn_xoahoadonchitiet
-            // 
-            this.btn_xoahoadonchitiet.BackColor = System.Drawing.Color.Red;
-            this.btn_xoahoadonchitiet.Location = new System.Drawing.Point(601, 536);
-            this.btn_xoahoadonchitiet.Name = "btn_xoahoadonchitiet";
-            this.btn_xoahoadonchitiet.Size = new System.Drawing.Size(44, 26);
-            this.btn_xoahoadonchitiet.TabIndex = 54;
-            this.btn_xoahoadonchitiet.Text = "Xóa";
-            this.btn_xoahoadonchitiet.UseVisualStyleBackColor = false;
-            this.btn_xoahoadonchitiet.UseWaitCursor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.tbx_thanhtien);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.tbx_giagoc);
-            this.groupBox1.Controls.Add(this.tbx_giamgia);
-            this.groupBox1.Controls.Add(this.nud_hdctsoluong);
-            this.groupBox1.Location = new System.Drawing.Point(535, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 156);
-            this.groupBox1.TabIndex = 43;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tính tiền";
-            this.groupBox1.UseWaitCursor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 93);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 15);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "Giảm giá";
-            this.label19.UseWaitCursor = true;
             // 
             // label16
             // 
@@ -435,6 +475,18 @@
             this.tbx_thanhtien.Size = new System.Drawing.Size(129, 23);
             this.tbx_thanhtien.TabIndex = 14;
             this.tbx_thanhtien.UseWaitCursor = true;
+            // 
+            // btn_taohoadonchitiet
+            // 
+            this.btn_taohoadonchitiet.BackColor = System.Drawing.Color.Lime;
+            this.btn_taohoadonchitiet.Location = new System.Drawing.Point(6, 154);
+            this.btn_taohoadonchitiet.Name = "btn_taohoadonchitiet";
+            this.btn_taohoadonchitiet.Size = new System.Drawing.Size(221, 43);
+            this.btn_taohoadonchitiet.TabIndex = 52;
+            this.btn_taohoadonchitiet.Text = "Lưu ";
+            this.btn_taohoadonchitiet.UseVisualStyleBackColor = false;
+            this.btn_taohoadonchitiet.UseWaitCursor = true;
+            this.btn_taohoadonchitiet.Click += new System.EventHandler(this.btn_taohoadonchitiet_Click);
             // 
             // label21
             // 
@@ -497,7 +549,7 @@
             this.groupBox3.Controls.Add(this.tbx_mavoucher);
             this.groupBox3.Controls.Add(this.tbx_tennguoinhan);
             this.groupBox3.Controls.Add(this.tbx_sdtnguoinhan);
-            this.groupBox3.Location = new System.Drawing.Point(22, 31);
+            this.groupBox3.Location = new System.Drawing.Point(19, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(507, 163);
             this.groupBox3.TabIndex = 42;
@@ -584,7 +636,7 @@
             this.cbb_manhanvien.FormattingEnabled = true;
             this.cbb_manhanvien.Location = new System.Drawing.Point(103, 89);
             this.cbb_manhanvien.Name = "cbb_manhanvien";
-            this.cbb_manhanvien.Size = new System.Drawing.Size(121, 23);
+            this.cbb_manhanvien.Size = new System.Drawing.Size(145, 23);
             this.cbb_manhanvien.TabIndex = 10;
             this.cbb_manhanvien.UseWaitCursor = true;
             // 
@@ -601,7 +653,8 @@
             // 
             this.tbx_mahoadon.Location = new System.Drawing.Point(103, 21);
             this.tbx_mahoadon.Name = "tbx_mahoadon";
-            this.tbx_mahoadon.Size = new System.Drawing.Size(121, 23);
+            this.tbx_mahoadon.ReadOnly = true;
+            this.tbx_mahoadon.Size = new System.Drawing.Size(145, 23);
             this.tbx_mahoadon.TabIndex = 14;
             this.tbx_mahoadon.UseWaitCursor = true;
             // 
@@ -609,9 +662,10 @@
             // 
             this.tbx_sodienthoaikh.Location = new System.Drawing.Point(103, 118);
             this.tbx_sodienthoaikh.Name = "tbx_sodienthoaikh";
-            this.tbx_sodienthoaikh.Size = new System.Drawing.Size(121, 23);
+            this.tbx_sodienthoaikh.Size = new System.Drawing.Size(145, 23);
             this.tbx_sodienthoaikh.TabIndex = 23;
             this.tbx_sodienthoaikh.UseWaitCursor = true;
+            this.tbx_sodienthoaikh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_sodienthoaikh_KeyPress);
             // 
             // label10
             // 
@@ -647,7 +701,7 @@
             // 
             this.tbx_mavoucher.Location = new System.Drawing.Point(354, 84);
             this.tbx_mavoucher.Name = "tbx_mavoucher";
-            this.tbx_mavoucher.Size = new System.Drawing.Size(121, 23);
+            this.tbx_mavoucher.Size = new System.Drawing.Size(147, 23);
             this.tbx_mavoucher.TabIndex = 11;
             this.tbx_mavoucher.UseWaitCursor = true;
             // 
@@ -655,7 +709,7 @@
             // 
             this.tbx_tennguoinhan.Location = new System.Drawing.Point(354, 20);
             this.tbx_tennguoinhan.Name = "tbx_tennguoinhan";
-            this.tbx_tennguoinhan.Size = new System.Drawing.Size(121, 23);
+            this.tbx_tennguoinhan.Size = new System.Drawing.Size(147, 23);
             this.tbx_tennguoinhan.TabIndex = 13;
             this.tbx_tennguoinhan.UseWaitCursor = true;
             // 
@@ -663,37 +717,28 @@
             // 
             this.tbx_sdtnguoinhan.Location = new System.Drawing.Point(354, 49);
             this.tbx_sdtnguoinhan.Name = "tbx_sdtnguoinhan";
-            this.tbx_sdtnguoinhan.Size = new System.Drawing.Size(121, 23);
+            this.tbx_sdtnguoinhan.Size = new System.Drawing.Size(147, 23);
             this.tbx_sdtnguoinhan.TabIndex = 15;
             this.tbx_sdtnguoinhan.UseWaitCursor = true;
             this.tbx_sdtnguoinhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_sdtnguoinhan_KeyPress);
             // 
             // tbx_hoadon_mactlt
             // 
-            this.tbx_hoadon_mactlt.Location = new System.Drawing.Point(59, 244);
+            this.tbx_hoadon_mactlt.Location = new System.Drawing.Point(19, 267);
             this.tbx_hoadon_mactlt.Name = "tbx_hoadon_mactlt";
-            this.tbx_hoadon_mactlt.Size = new System.Drawing.Size(100, 23);
+            this.tbx_hoadon_mactlt.Size = new System.Drawing.Size(121, 23);
             this.tbx_hoadon_mactlt.TabIndex = 41;
             this.tbx_hoadon_mactlt.UseWaitCursor = true;
             // 
-            // dtg_createhoadon
-            // 
-            this.dtg_createhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_createhoadon.Location = new System.Drawing.Point(370, 205);
-            this.dtg_createhoadon.Name = "dtg_createhoadon";
-            this.dtg_createhoadon.RowTemplate.Height = 25;
-            this.dtg_createhoadon.Size = new System.Drawing.Size(112, 71);
-            this.dtg_createhoadon.TabIndex = 40;
-            this.dtg_createhoadon.UseWaitCursor = true;
-            // 
             // btn_createhoadon
             // 
-            this.btn_createhoadon.Location = new System.Drawing.Point(175, 243);
+            this.btn_createhoadon.BackColor = System.Drawing.Color.Fuchsia;
+            this.btn_createhoadon.Location = new System.Drawing.Point(146, 261);
             this.btn_createhoadon.Name = "btn_createhoadon";
-            this.btn_createhoadon.Size = new System.Drawing.Size(145, 23);
+            this.btn_createhoadon.Size = new System.Drawing.Size(117, 33);
             this.btn_createhoadon.TabIndex = 39;
-            this.btn_createhoadon.Text = "Create Hóa Đơn";
-            this.btn_createhoadon.UseVisualStyleBackColor = true;
+            this.btn_createhoadon.Text = "Thêm sản phẩm";
+            this.btn_createhoadon.UseVisualStyleBackColor = false;
             this.btn_createhoadon.UseWaitCursor = true;
             this.btn_createhoadon.Click += new System.EventHandler(this.btn_createhoadon_Click);
             // 
@@ -711,7 +756,7 @@
             this.groupBox2.Controls.Add(this.btn_xoakhachhang);
             this.groupBox2.Controls.Add(this.tbx_sdtkhachhang);
             this.groupBox2.Controls.Add(this.btn_themkhachhang);
-            this.groupBox2.Location = new System.Drawing.Point(897, 24);
+            this.groupBox2.Location = new System.Drawing.Point(944, 26);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 296);
             this.groupBox2.TabIndex = 38;
@@ -768,6 +813,7 @@
             this.btn_suakhachhang.Text = "Sửa";
             this.btn_suakhachhang.UseVisualStyleBackColor = false;
             this.btn_suakhachhang.UseWaitCursor = true;
+            this.btn_suakhachhang.Click += new System.EventHandler(this.btn_suakhachhang_Click);
             // 
             // dtg_showkhachhang
             // 
@@ -818,6 +864,7 @@
             this.btn_xoakhachhang.Text = "Xóa";
             this.btn_xoakhachhang.UseVisualStyleBackColor = false;
             this.btn_xoakhachhang.UseWaitCursor = true;
+            this.btn_xoakhachhang.Click += new System.EventHandler(this.btn_xoakhachhang_Click);
             // 
             // tbx_sdtkhachhang
             // 
@@ -839,52 +886,44 @@
             this.btn_themkhachhang.Text = "Thêm";
             this.btn_themkhachhang.UseVisualStyleBackColor = false;
             this.btn_themkhachhang.UseWaitCursor = true;
-            // 
-            // dtg_showhoadon
-            // 
-            this.dtg_showhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showhoadon.Location = new System.Drawing.Point(52, 491);
-            this.dtg_showhoadon.Name = "dtg_showhoadon";
-            this.dtg_showhoadon.RowTemplate.Height = 25;
-            this.dtg_showhoadon.Size = new System.Drawing.Size(238, 204);
-            this.dtg_showhoadon.TabIndex = 21;
-            this.dtg_showhoadon.UseWaitCursor = true;
-            this.dtg_showhoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showhoadon_CellClick);
+            this.btn_themkhachhang.Click += new System.EventHandler(this.btn_themkhachhang_Click);
             // 
             // btn_suahoadon
             // 
             this.btn_suahoadon.BackColor = System.Drawing.Color.Yellow;
             this.btn_suahoadon.ForeColor = System.Drawing.Color.Black;
-            this.btn_suahoadon.Location = new System.Drawing.Point(601, 293);
+            this.btn_suahoadon.Location = new System.Drawing.Point(154, 169);
             this.btn_suahoadon.Name = "btn_suahoadon";
             this.btn_suahoadon.Size = new System.Drawing.Size(103, 25);
             this.btn_suahoadon.TabIndex = 20;
-            this.btn_suahoadon.Text = "Thanh Toán";
+            this.btn_suahoadon.Text = "Sửa thông tin";
             this.btn_suahoadon.UseVisualStyleBackColor = false;
             this.btn_suahoadon.UseWaitCursor = true;
             this.btn_suahoadon.Click += new System.EventHandler(this.btn_suahoadon_Click);
             // 
             // btn_xoahoadon
             // 
-            this.btn_xoahoadon.ForeColor = System.Drawing.Color.Red;
-            this.btn_xoahoadon.Location = new System.Drawing.Point(261, 194);
+            this.btn_xoahoadon.BackColor = System.Drawing.Color.Red;
+            this.btn_xoahoadon.ForeColor = System.Drawing.Color.Black;
+            this.btn_xoahoadon.Location = new System.Drawing.Point(258, 169);
             this.btn_xoahoadon.Name = "btn_xoahoadon";
             this.btn_xoahoadon.Size = new System.Drawing.Size(103, 25);
             this.btn_xoahoadon.TabIndex = 19;
             this.btn_xoahoadon.Text = "Xóa Hóa Đơn";
-            this.btn_xoahoadon.UseVisualStyleBackColor = true;
+            this.btn_xoahoadon.UseVisualStyleBackColor = false;
             this.btn_xoahoadon.UseWaitCursor = true;
             this.btn_xoahoadon.Click += new System.EventHandler(this.btn_xoahoadon_Click);
             // 
             // btn_themhoadon
             // 
+            this.btn_themhoadon.BackColor = System.Drawing.Color.Fuchsia;
             this.btn_themhoadon.ForeColor = System.Drawing.Color.Red;
-            this.btn_themhoadon.Location = new System.Drawing.Point(52, 194);
+            this.btn_themhoadon.Location = new System.Drawing.Point(19, 173);
             this.btn_themhoadon.Name = "btn_themhoadon";
-            this.btn_themhoadon.Size = new System.Drawing.Size(88, 25);
+            this.btn_themhoadon.Size = new System.Drawing.Size(129, 66);
             this.btn_themhoadon.TabIndex = 18;
             this.btn_themhoadon.Text = "Tạo Hóa Đơn";
-            this.btn_themhoadon.UseVisualStyleBackColor = true;
+            this.btn_themhoadon.UseVisualStyleBackColor = false;
             this.btn_themhoadon.UseWaitCursor = true;
             this.btn_themhoadon.Click += new System.EventHandler(this.btn_themhoadon_Click);
             // 
@@ -940,9 +979,9 @@
             // btn_closecamera
             // 
             this.btn_closecamera.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_closecamera.Location = new System.Drawing.Point(637, 157);
+            this.btn_closecamera.Location = new System.Drawing.Point(553, 211);
             this.btn_closecamera.Name = "btn_closecamera";
-            this.btn_closecamera.Size = new System.Drawing.Size(55, 69);
+            this.btn_closecamera.Size = new System.Drawing.Size(89, 69);
             this.btn_closecamera.TabIndex = 53;
             this.btn_closecamera.Text = "Close";
             this.btn_closecamera.UseVisualStyleBackColor = false;
@@ -952,9 +991,9 @@
             // btn_showcode
             // 
             this.btn_showcode.BackColor = System.Drawing.Color.Yellow;
-            this.btn_showcode.Location = new System.Drawing.Point(637, 130);
+            this.btn_showcode.Location = new System.Drawing.Point(553, 139);
             this.btn_showcode.Name = "btn_showcode";
-            this.btn_showcode.Size = new System.Drawing.Size(55, 21);
+            this.btn_showcode.Size = new System.Drawing.Size(89, 76);
             this.btn_showcode.TabIndex = 52;
             this.btn_showcode.Text = "Show";
             this.btn_showcode.UseVisualStyleBackColor = false;
@@ -964,9 +1003,9 @@
             // btn_opencamera
             // 
             this.btn_opencamera.BackColor = System.Drawing.Color.Red;
-            this.btn_opencamera.Location = new System.Drawing.Point(637, 94);
+            this.btn_opencamera.Location = new System.Drawing.Point(553, 65);
             this.btn_opencamera.Name = "btn_opencamera";
-            this.btn_opencamera.Size = new System.Drawing.Size(55, 24);
+            this.btn_opencamera.Size = new System.Drawing.Size(89, 79);
             this.btn_opencamera.TabIndex = 51;
             this.btn_opencamera.Text = "Open Camera";
             this.btn_opencamera.UseVisualStyleBackColor = false;
@@ -1125,22 +1164,23 @@
             this.tabcotrol_frombanhang.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudz_slhoadon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_showhoadon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadonchitiet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_hdctsoluong)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_createhoadon)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_showkhachhang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_showhoadon)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_qrcode)).EndInit();
@@ -1209,14 +1249,12 @@
         private GroupBox groupBox2;
         private Label label24;
         private Button btn_createhoadon;
-        private DataGridView dtg_createhoadon;
         private TextBox tbx_hoadon_mactlt;
         private GroupBox groupBox3;
         private GroupBox groupBox1;
         private Label label19;
         private Label label16;
         private Label label18;
-        private Button btn_autofill;
         private TextBox tbx_thanhtien;
         private Label label21;
         private TextBox tbx_giagoc;
@@ -1225,7 +1263,6 @@
         private Button btn_themimeidaban;
         private DataGridView dtg_hoadonchitiet;
         private Button btn_taohoadonchitiet;
-        private Button btn_suahoadonchitiet;
         private Label label23;
         private Button btn_xoahoadonchitiet;
         private TextBox tbx_soimeidaban;
@@ -1242,5 +1279,10 @@
         private Label label17;
         private TextBox tbx_mahoadonchitiet;
         private Panel panel2;
+        private Panel panel3;
+        private RadioButton rbt_hienthiall;
+        private RadioButton rbt_timhoadonchuatt;
+        private RadioButton rbt_timhddathanhtoan;
+        private Button btn_thanhtoan;
     }
 }

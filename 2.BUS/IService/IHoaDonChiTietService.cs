@@ -12,5 +12,6 @@ namespace _2.BUS.IService
         string UpdateTrangThai(HoaDonChiTietView hdctview);
         List<HoaDonChiTietView> GetHoaDonChiTiet();
         public List<HoaDonChiTietView> GetHoaDonChiTietNoJoin();
+        bool CheckMa(string mahdct);
     }
 }

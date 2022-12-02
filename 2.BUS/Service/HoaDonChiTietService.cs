@@ -29,6 +29,16 @@ namespace _2.BUS.Service
             else return "Thất bại";
         }
 
+        public bool CheckMa(string mahdct)
+        {
+            var a = hoaDonChiTietRepositories.GetHoaDonChiTiet();
+           var linh = a.FirstOrDefault(a=>a.Ma==mahdct);
+            if (a != null)
+                return true;
+            else return false;
+
+        }
+
         public string Delete(HoaDonChiTietView hdctview)
         {
             if (hdctview == null) return "Thất bại";

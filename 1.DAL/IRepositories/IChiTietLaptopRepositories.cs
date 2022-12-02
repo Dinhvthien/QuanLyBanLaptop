@@ -8,5 +8,6 @@ namespace _1.DAL.IRepositories
         bool Update(ChiTietLaptop ctlt);
         bool Delete(ChiTietLaptop ctlt);
         List<ChiTietLaptop> GetChiTietLaptop();
+        bool UpdateSoLuong(ChiTietLaptop ctlt);
     }
 }

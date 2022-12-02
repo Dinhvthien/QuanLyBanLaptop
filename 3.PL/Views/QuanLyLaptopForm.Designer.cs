@@ -94,8 +94,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_themnsx = new System.Windows.Forms.Button();
             this.tp_mausac = new System.Windows.Forms.TabPage();
-            this.dtg_showmausac = new System.Windows.Forms.DataGridView();
             this.btn_suams = new System.Windows.Forms.Button();
+            this.dtg_showmausac = new System.Windows.Forms.DataGridView();
             this.btn_xoams = new System.Windows.Forms.Button();
             this.btn_themms = new System.Windows.Forms.Button();
             this.tbx_mams = new System.Windows.Forms.TextBox();
@@ -163,8 +163,10 @@
             // 
             this.tbx_soluongctlt.Location = new System.Drawing.Point(130, 194);
             this.tbx_soluongctlt.Name = "tbx_soluongctlt";
+            this.tbx_soluongctlt.ReadOnly = true;
             this.tbx_soluongctlt.Size = new System.Drawing.Size(48, 29);
             this.tbx_soluongctlt.TabIndex = 36;
+            this.tbx_soluongctlt.Text = "1";
             this.tbx_soluongctlt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_soluongctlt_KeyPress);
             // 
             // tbx_machitietlaptop
@@ -207,7 +209,7 @@
             this.dtg_showchitietlaptop.Name = "dtg_showchitietlaptop";
             this.dtg_showchitietlaptop.ReadOnly = true;
             this.dtg_showchitietlaptop.RowTemplate.Height = 25;
-            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(317, 374);
+            this.dtg_showchitietlaptop.Size = new System.Drawing.Size(384, 374);
             this.dtg_showchitietlaptop.TabIndex = 30;
             this.dtg_showchitietlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showchitietlaptop_CellClick);
             // 
@@ -372,7 +374,7 @@
             this.dtg_showlaptop.Location = new System.Drawing.Point(290, 22);
             this.dtg_showlaptop.Name = "dtg_showlaptop";
             this.dtg_showlaptop.RowTemplate.Height = 25;
-            this.dtg_showlaptop.Size = new System.Drawing.Size(329, 303);
+            this.dtg_showlaptop.Size = new System.Drawing.Size(339, 303);
             this.dtg_showlaptop.TabIndex = 7;
             this.dtg_showlaptop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showlaptop_CellClick);
             // 
@@ -494,7 +496,7 @@
             this.dtg_showthuoctinh.Location = new System.Drawing.Point(297, 16);
             this.dtg_showthuoctinh.Name = "dtg_showthuoctinh";
             this.dtg_showthuoctinh.RowTemplate.Height = 25;
-            this.dtg_showthuoctinh.Size = new System.Drawing.Size(342, 317);
+            this.dtg_showthuoctinh.Size = new System.Drawing.Size(373, 317);
             this.dtg_showthuoctinh.TabIndex = 7;
             this.dtg_showthuoctinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showthuoctinh_CellClick);
             // 
@@ -576,7 +578,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.cbb_idthuoctinh);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.dtg_showgiatri);
@@ -616,7 +618,7 @@
             this.dtg_showgiatri.Location = new System.Drawing.Point(19, 107);
             this.dtg_showgiatri.Name = "dtg_showgiatri";
             this.dtg_showgiatri.RowTemplate.Height = 25;
-            this.dtg_showgiatri.Size = new System.Drawing.Size(423, 242);
+            this.dtg_showgiatri.Size = new System.Drawing.Size(442, 242);
             this.dtg_showgiatri.TabIndex = 7;
             this.dtg_showgiatri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showgiatri_CellClick);
             // 
@@ -714,12 +716,13 @@
             // 
             // dtg_shownsx
             // 
+            this.dtg_shownsx.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_shownsx.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dtg_shownsx.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_shownsx.Location = new System.Drawing.Point(192, 15);
+            this.dtg_shownsx.Location = new System.Drawing.Point(193, 34);
             this.dtg_shownsx.Name = "dtg_shownsx";
             this.dtg_shownsx.RowTemplate.Height = 25;
-            this.dtg_shownsx.Size = new System.Drawing.Size(339, 284);
+            this.dtg_shownsx.Size = new System.Drawing.Size(422, 284);
             this.dtg_shownsx.TabIndex = 7;
             this.dtg_shownsx.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_shownsx_CellClick);
             // 
@@ -806,17 +809,6 @@
             this.tp_mausac.TabIndex = 0;
             this.tp_mausac.Text = "Màu sắc";
             // 
-            // dtg_showmausac
-            // 
-            this.dtg_showmausac.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dtg_showmausac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_showmausac.Location = new System.Drawing.Point(249, 133);
-            this.dtg_showmausac.Name = "dtg_showmausac";
-            this.dtg_showmausac.RowTemplate.Height = 25;
-            this.dtg_showmausac.Size = new System.Drawing.Size(273, 254);
-            this.dtg_showmausac.TabIndex = 7;
-            this.dtg_showmausac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showmausac_CellClick);
-            // 
             // btn_suams
             // 
             this.btn_suams.ForeColor = System.Drawing.Color.Red;
@@ -827,6 +819,18 @@
             this.btn_suams.Text = "Sửa";
             this.btn_suams.UseVisualStyleBackColor = true;
             this.btn_suams.Click += new System.EventHandler(this.btn_suams_Click);
+            // 
+            // dtg_showmausac
+            // 
+            this.dtg_showmausac.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtg_showmausac.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dtg_showmausac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_showmausac.Location = new System.Drawing.Point(269, 136);
+            this.dtg_showmausac.Name = "dtg_showmausac";
+            this.dtg_showmausac.RowTemplate.Height = 25;
+            this.dtg_showmausac.Size = new System.Drawing.Size(418, 254);
+            this.dtg_showmausac.TabIndex = 7;
+            this.dtg_showmausac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_showmausac_CellClick);
             // 
             // btn_xoams
             // 
