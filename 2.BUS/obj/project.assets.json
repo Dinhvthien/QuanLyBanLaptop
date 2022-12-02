@@ -1929,19 +1929,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\theun\\.nuget\\packages\\": {}
+    "C:\\Users\\dinht\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\My Drive\\Study\\Dự án 1 .net\\DA1_QLBanLaptop\\2.BUS\\2.BUS.csproj",
+      "projectUniqueName": "C:\\Users\\dinht\\OneDrive\\Máy tính\\asdasd\\QuanLyBanLaptop\\2.BUS\\2.BUS.csproj",
       "projectName": "2.BUS",
-      "projectPath": "G:\\My Drive\\Study\\Dự án 1 .net\\DA1_QLBanLaptop\\2.BUS\\2.BUS.csproj",
-      "packagesPath": "C:\\Users\\theun\\.nuget\\packages\\",
-      "outputPath": "G:\\My Drive\\Study\\Dự án 1 .net\\DA1_QLBanLaptop\\2.BUS\\obj\\",
+      "projectPath": "C:\\Users\\dinht\\OneDrive\\Máy tính\\asdasd\\QuanLyBanLaptop\\2.BUS\\2.BUS.csproj",
+      "packagesPath": "C:\\Users\\dinht\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dinht\\OneDrive\\Máy tính\\asdasd\\QuanLyBanLaptop\\2.BUS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\theun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1955,8 +1955,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "G:\\My Drive\\Study\\Dự án 1 .net\\DA1_QLBanLaptop\\1.DAL\\1.DAL.csproj": {
-              "projectPath": "G:\\My Drive\\Study\\Dự án 1 .net\\DA1_QLBanLaptop\\1.DAL\\1.DAL.csproj"
+            "C:\\Users\\dinht\\OneDrive\\Máy tính\\asdasd\\QuanLyBanLaptop\\1.DAL\\1.DAL.csproj": {
+              "projectPath": "C:\\Users\\dinht\\OneDrive\\Máy tính\\asdasd\\QuanLyBanLaptop\\1.DAL\\1.DAL.csproj"
             }
           }
         }
@@ -1986,7 +1986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

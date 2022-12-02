@@ -18,7 +18,7 @@ namespace _3.PL
            Application.Run(new FormLogin());
         //  Application.Run(new IndexForm());
             //     Application.Run(new AdminForm());
-
+            //dfgdf
         }
     }
 }
